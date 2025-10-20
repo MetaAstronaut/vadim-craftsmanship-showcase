@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, ArrowRight } from "lucide-react";
-
 const CTA = () => {
-  return (
-    <section className="section-padding bg-background relative overflow-hidden border-t border-border">
+  return <section className="section-padding bg-background relative overflow-hidden border-t border-border">
       {/* Premium Background with Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-background to-secondary/10"></div>
       
@@ -27,19 +25,11 @@ const CTA = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Button 
-              size="lg" 
-              variant="default" 
-              className="group text-lg px-12 py-7 h-auto shadow-premium hover:shadow-2xl font-semibold"
-            >
+            <Button size="lg" variant="default" className="group text-lg px-12 py-7 h-auto shadow-premium hover:shadow-2xl font-semibold">
               <Phone className="mr-3 h-6 w-6 transition-transform group-hover:scale-110" />
               Call (407) 555-0123
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="group text-lg px-12 py-7 h-auto border-2 border-foreground/20 hover:border-secondary hover:bg-secondary/5 font-semibold"
-            >
+            <Button size="lg" variant="outline" className="group text-lg px-12 py-7 h-auto border-2 border-foreground/20 hover:border-secondary hover:bg-secondary/5 font-semibold">
               <Mail className="mr-3 h-6 w-6" />
               Email Us
               <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
@@ -47,26 +37,9 @@ const CTA = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-20 pt-16 border-t border-border">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div className="group">
-                <div className="text-5xl font-bold mb-3 text-secondary">24/7</div>
-                <div className="text-sm text-foreground/70 uppercase tracking-[0.2em] font-semibold">Emergency Service</div>
-              </div>
-              <div className="group">
-                <div className="text-5xl font-bold mb-3 text-secondary">Licensed</div>
-                <div className="text-sm text-foreground/70 uppercase tracking-[0.2em] font-semibold">& Insured</div>
-              </div>
-              <div className="group">
-                <div className="text-5xl font-bold mb-3 text-secondary">100%</div>
-                <div className="text-sm text-foreground/70 uppercase tracking-[0.2em] font-semibold">Satisfaction</div>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
