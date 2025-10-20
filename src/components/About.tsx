@@ -39,14 +39,14 @@ const About = () => {
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="text-center animate-fade-in"
+              className="text-center group animate-scale-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-4">
-                <value.icon className="h-8 w-8 text-secondary" />
+              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-[var(--shadow-sm)] group-hover:shadow-[var(--shadow-glow)]">
+                <value.icon className="h-10 w-10 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-              <p className="text-muted-foreground">{value.description}</p>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>

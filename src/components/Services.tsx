@@ -43,17 +43,18 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={service.title}
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+              className="group hover:shadow-[var(--shadow-lg)] transition-all duration-500 hover:-translate-y-2 animate-fade-in-up border-border/50 backdrop-blur-sm bg-card/80 relative overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <service.icon className="h-6 w-6 text-primary" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <CardHeader className="relative">
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-[var(--shadow-sm)]">
+                  <service.icon className="h-7 w-7 text-primary" />
                 </div>
-                <CardTitle>{service.title}</CardTitle>
+                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">{service.description}</CardDescription>
+              <CardContent className="relative">
+                <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
               </CardContent>
             </Card>
           ))}
