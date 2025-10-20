@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import heroImage from "@/assets/home-repairs-hero.jpg";
-import { CheckCircle2, Phone, MessageSquare } from "lucide-react";
+import { CheckCircle2, Phone, MessageSquare, ClipboardCheck, FileText, Calendar, Wrench, Search, Handshake, ShieldCheck, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const HomeRepairs = () => {
   const interiorServices = [{
@@ -442,6 +442,267 @@ const HomeRepairs = () => {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Quality Process Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">
+              Our Quality Process
+            </h2>
+            <p className="text-center text-muted-foreground mb-16 text-lg">
+              The Difference Is in the Details
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <ClipboardCheck className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">1</span>
+                  </div>
+                  <CardTitle>Consultation & Assessment</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    We listen carefully to understand your needs, inspect the issue thoroughly, and provide honest recommendations.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <FileText className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">2</span>
+                  </div>
+                  <CardTitle>Detailed Estimate</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    You'll receive a clear, itemized estimate with no hidden fees. We explain every line item so you understand exactly what you're paying for.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Calendar className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">3</span>
+                  </div>
+                  <CardTitle>Scheduling & Planning</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    We work around your schedule and provide realistic timelines. Our team arrives on time, in uniform, and ready to work.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Wrench className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">4</span>
+                  </div>
+                  <CardTitle>Expert Execution</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Our skilled craftsmen complete the work using proper techniques, quality materials, and attention to detail.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Search className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">5</span>
+                  </div>
+                  <CardTitle>Inspection & Cleanup</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    We inspect our own work to ensure it meets our standards, then clean up thoroughly, leaving your space better than we found it.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Handshake className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">6</span>
+                  </div>
+                  <CardTitle>Final Walkthrough</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    We review the completed work with you, answer any questions, and ensure you're completely satisfied.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="card-hover md:col-span-2 lg:col-span-3 lg:max-w-md lg:mx-auto">
+                <CardHeader>
+                  <div className="flex items-center gap-4 mb-2">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <ShieldCheck className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-2xl font-bold text-primary">7</span>
+                  </div>
+                  <CardTitle>Warranty & Follow-Up</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Every project is backed by our warranty, and we're always available for follow-up questions or concerns.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in-up">
+              Common Home Repair Questions Answered
+            </h2>
+            
+            <Accordion type="single" collapsible className="space-y-4 animate-fade-in">
+              <AccordionItem value="cost" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  How much does a typical home repair cost?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    Home repair costs vary based on the scope of work, materials needed, and labor time. Minor repairs like fixing a leaky faucet typically range from $150-$300, while larger projects like drywall repair can range from $300-$1,500. We provide transparent, detailed estimates before beginning any work so you know exactly what to expect.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="response" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  How quickly can you respond to repair requests?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    For standard repairs, we typically schedule within 2-5 business days. Emergency repairs receive same-day or next-day service depending on availability. We understand that some issues can't wait, and we prioritize urgent situations accordingly.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="licensed" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  Are you licensed and insured?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    Yes, The Vadim Group is fully licensed, bonded, and insured. We carry comprehensive general liability and workers' compensation insurance to protect both our clients and our team members. We're happy to provide proof of insurance upon request.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="warranty" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  Do you offer warranties on your work?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    Absolutely. We stand behind every repair with a comprehensive workmanship warranty. Specific warranty terms vary by project type, but we ensure that all repairs are completed to the highest standards and will last for years to come.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="size" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  Can you handle both small repairs and large renovations?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    Yes! No job is too small or too large for The Vadim Group. Whether you need a single outlet replaced or a complete home renovation, we approach every project with the same dedication to quality and customer satisfaction.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="presence" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  Do I need to be home during the repair?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    It depends on the project. For some repairs, we can work independently after an initial consultation. For others, we may need access or input throughout the process. We'll discuss the specifics during scheduling and work around your availability.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="additional" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  What if the problem is worse than initially thought?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    Transparency is one of our core values. If we discover additional issues during a repair, we'll stop work, document the problem, and provide you with options and pricing before proceeding. You'll never receive surprise charges.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="prioritize" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  How do I know what repairs to prioritize?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                    During our initial assessment, we'll help you identify which repairs are urgent (safety or structural concerns), important (preventing further damage), and desirable (aesthetic improvements). We'll provide honest recommendations based on your budget and goals.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Services Banner */}
+      <section className="py-6 bg-destructive/10 border-y border-destructive/20">
+        <div className="container px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+            <AlertCircle className="h-8 w-8 text-destructive flex-shrink-0" />
+            <div className="flex-1 max-w-2xl">
+              <p className="text-lg font-semibold text-foreground">
+                Need Emergency Repairs? We're available 24/7 for urgent home repair issues.
+              </p>
+            </div>
+            <Button 
+              size="lg" 
+              variant="destructive"
+              className="font-bold"
+              asChild
+            >
+              <a href="tel:+14075550123" className="flex items-center gap-2">
+                <Phone className="h-5 w-5" />
+                Call Now: (407) 555-0123
+              </a>
+            </Button>
           </div>
         </div>
       </section>
