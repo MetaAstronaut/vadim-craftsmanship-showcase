@@ -12,7 +12,6 @@ const Header = () => {
     { name: "Home Repairs", href: "/home-repairs", isRoute: true },
     { name: "Other Services", href: "/other-services", isRoute: true },
     { name: "Emergency", href: "/emergency-services", isRoute: true },
-    { name: "FAQ", href: "#faq", isRoute: false },
     { name: "Contact", href: "/contact", isRoute: true },
     { name: "Blog", href: "/blog", isRoute: true },
   ];
