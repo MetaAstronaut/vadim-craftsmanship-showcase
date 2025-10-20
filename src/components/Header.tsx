@@ -10,7 +10,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "/", isRoute: true },
     { name: "Home Repairs", href: "/home-repairs", isRoute: true },
-    { name: "Other Services", href: "#other-services", isRoute: false },
+    { name: "Other Services", href: "/other-services", isRoute: true },
     { name: "Emergency", href: "#emergency", isRoute: false },
     { name: "FAQ", href: "#faq", isRoute: false },
     { name: "Contact", href: "#contact", isRoute: false },
