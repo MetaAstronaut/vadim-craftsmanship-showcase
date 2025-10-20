@@ -89,7 +89,6 @@ const HomeRepairs = () => {
     name: "Safety Inspections",
     desc: "Comprehensive electrical system evaluation"
   }];
-  
   const structuralFoundation = [{
     name: "Foundation Crack Repair",
     desc: "Fixing cracks and preventing water intrusion"
@@ -106,7 +105,6 @@ const HomeRepairs = () => {
     name: "Structural Inspection Services",
     desc: "Detailed assessment of home structural integrity"
   }];
-  
   const hvacClimate = [{
     name: "Vent Repair and Cleaning",
     desc: "Ductwork maintenance and airflow optimization"
@@ -454,7 +452,7 @@ const HomeRepairs = () => {
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Contact us today for a free estimate and let us restore your home to perfection.
           </p>
-          <CTA />
+          
         </div>
       </section>
 
