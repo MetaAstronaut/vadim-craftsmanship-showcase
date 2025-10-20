@@ -6,88 +6,91 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import heroImage from "@/assets/home-repairs-hero.jpg";
 import { CheckCircle2 } from "lucide-react";
-
 const HomeRepairs = () => {
-  const interiorServices = [
-    { name: "Drywall Repair & Installation", desc: "Fixing holes, cracks, water damage, and texture matching" },
-    { name: "Painting Services", desc: "Interior and exterior painting, color consultation, and specialty finishes" },
-    { name: "Flooring Repair", desc: "Hardwood refinishing, tile replacement, carpet repair, and vinyl installation" },
-    { name: "Door Repairs", desc: "Fixing squeaky hinges, alignment issues, lock installation, and door replacement" },
-    { name: "Window Repairs", desc: "Broken glass replacement, seal repairs, weatherproofing, and frame restoration" },
-    { name: "Ceiling Repairs", desc: "Water stain removal, popcorn ceiling removal, and crack repair" },
-    { name: "Baseboard & Trim", desc: "Installation, replacement, and custom millwork" }
-  ];
-
-  const exteriorServices = [
-    { name: "Siding Repair", desc: "Vinyl, wood, and fiber cement siding repair and replacement" },
-    { name: "Roof Repairs", desc: "Shingle replacement, leak repair, flashing installation, and emergency repairs" },
-    { name: "Gutter Services", desc: "Cleaning, repair, installation, and gutter guard systems" },
-    { name: "Deck & Patio", desc: "Wood and composite deck repair, staining, sealing, and structural reinforcement" },
-    { name: "Fence Repair", desc: "Post replacement, panel repair, gate adjustment, and staining" },
-    { name: "Pressure Washing", desc: "House washing, driveway cleaning, deck restoration, and surface preparation" },
-    { name: "Weatherproofing", desc: "Sealing, caulking, insulation upgrades, and moisture barrier installation" }
-  ];
-
-  const kitchenBathroom = [
-    { name: "Plumbing Fixes", desc: "Faucet repair, leak fixes, drain cleaning, and toilet repairs" },
-    { name: "Cabinet Repair", desc: "Hinge replacement, drawer repair, refinishing, and hardware upgrades" },
-    { name: "Countertop Repair", desc: "Chip repair, seam repair, resealing, and minor crack fixes" },
-    { name: "Tile & Grout", desc: "Tile replacement, grout repair and recoloring, caulking, and waterproofing" },
-    { name: "Appliance Installation", desc: "Dishwasher, garbage disposal, range hood, and built-in appliance installation" }
-  ];
-
-  const electricalHvac = [
-    { name: "Outlet and Switch Replacement", desc: "Upgrading outlets, GFCI installation, dimmer switches, and USB outlets" },
-    { name: "Light Fixture Installation", desc: "Ceiling fans, chandeliers, recessed lighting, and outdoor fixtures" },
-    { name: "HVAC Vent Repair", desc: "Vent cleaning, duct repair, register replacement, and airflow optimization" },
-    { name: "Thermostat Installation", desc: "Smart thermostat installation, programmable units, and system integration" }
-  ];
-
-  const monthlyTasks = [
-    "Test smoke and carbon monoxide detectors",
-    "Check for plumbing leaks under sinks and around toilets",
-    "Clean or replace HVAC filters",
-    "Inspect weatherstripping around doors and windows",
-    "Test GFCI outlets"
-  ];
-
-  const quarterlyTasks = [
-    "Clean gutters and downspouts",
-    "Inspect roof for damaged shingles",
-    "Check caulking around tubs, showers, and sinks",
-    "Test garage door safety features",
-    "Inspect foundation for cracks"
-  ];
-
-  const annualTasks = [
-    "Service HVAC system",
-    "Inspect and clean chimney and fireplace",
-    "Check attic and basement for moisture and pests",
-    "Test sump pump (if applicable)",
-    "Inspect exterior paint and siding",
-    "Service water heater",
-    "Check deck and patio for structural issues"
-  ];
-
-  const biannualTasks = [
-    "Deep clean carpets and upholstery",
-    "Inspect and service septic system",
-    "Reseal driveway and walkways",
-    "Inspect and treat wood for termites"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const interiorServices = [{
+    name: "Drywall Repair & Installation",
+    desc: "Fixing holes, cracks, water damage, and texture matching"
+  }, {
+    name: "Painting Services",
+    desc: "Interior and exterior painting, color consultation, and specialty finishes"
+  }, {
+    name: "Flooring Repair",
+    desc: "Hardwood refinishing, tile replacement, carpet repair, and vinyl installation"
+  }, {
+    name: "Door Repairs",
+    desc: "Fixing squeaky hinges, alignment issues, lock installation, and door replacement"
+  }, {
+    name: "Window Repairs",
+    desc: "Broken glass replacement, seal repairs, weatherproofing, and frame restoration"
+  }, {
+    name: "Ceiling Repairs",
+    desc: "Water stain removal, popcorn ceiling removal, and crack repair"
+  }, {
+    name: "Baseboard & Trim",
+    desc: "Installation, replacement, and custom millwork"
+  }];
+  const exteriorServices = [{
+    name: "Siding Repair",
+    desc: "Vinyl, wood, and fiber cement siding repair and replacement"
+  }, {
+    name: "Roof Repairs",
+    desc: "Shingle replacement, leak repair, flashing installation, and emergency repairs"
+  }, {
+    name: "Gutter Services",
+    desc: "Cleaning, repair, installation, and gutter guard systems"
+  }, {
+    name: "Deck & Patio",
+    desc: "Wood and composite deck repair, staining, sealing, and structural reinforcement"
+  }, {
+    name: "Fence Repair",
+    desc: "Post replacement, panel repair, gate adjustment, and staining"
+  }, {
+    name: "Pressure Washing",
+    desc: "House washing, driveway cleaning, deck restoration, and surface preparation"
+  }, {
+    name: "Weatherproofing",
+    desc: "Sealing, caulking, insulation upgrades, and moisture barrier installation"
+  }];
+  const kitchenBathroom = [{
+    name: "Plumbing Fixes",
+    desc: "Faucet repair, leak fixes, drain cleaning, and toilet repairs"
+  }, {
+    name: "Cabinet Repair",
+    desc: "Hinge replacement, drawer repair, refinishing, and hardware upgrades"
+  }, {
+    name: "Countertop Repair",
+    desc: "Chip repair, seam repair, resealing, and minor crack fixes"
+  }, {
+    name: "Tile & Grout",
+    desc: "Tile replacement, grout repair and recoloring, caulking, and waterproofing"
+  }, {
+    name: "Appliance Installation",
+    desc: "Dishwasher, garbage disposal, range hood, and built-in appliance installation"
+  }];
+  const electricalHvac = [{
+    name: "Outlet and Switch Replacement",
+    desc: "Upgrading outlets, GFCI installation, dimmer switches, and USB outlets"
+  }, {
+    name: "Light Fixture Installation",
+    desc: "Ceiling fans, chandeliers, recessed lighting, and outdoor fixtures"
+  }, {
+    name: "HVAC Vent Repair",
+    desc: "Vent cleaning, duct repair, register replacement, and airflow optimization"
+  }, {
+    name: "Thermostat Installation",
+    desc: "Smart thermostat installation, programmable units, and system integration"
+  }];
+  const monthlyTasks = ["Test smoke and carbon monoxide detectors", "Check for plumbing leaks under sinks and around toilets", "Clean or replace HVAC filters", "Inspect weatherstripping around doors and windows", "Test GFCI outlets"];
+  const quarterlyTasks = ["Clean gutters and downspouts", "Inspect roof for damaged shingles", "Check caulking around tubs, showers, and sinks", "Test garage door safety features", "Inspect foundation for cracks"];
+  const annualTasks = ["Service HVAC system", "Inspect and clean chimney and fireplace", "Check attic and basement for moisture and pests", "Test sump pump (if applicable)", "Inspect exterior paint and siding", "Service water heater", "Check deck and patio for structural issues"];
+  const biannualTasks = ["Deep clean carpets and upholstery", "Inspect and service septic system", "Reseal driveway and walkways", "Inspect and treat wood for termites"];
+  return <div className="min-h-screen bg-background">
       <Header />
       
       {/* Hero Section */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Home Repair Services" 
-            className="w-full h-full object-cover"
-          />
+          <img src={heroImage} alt="Home Repair Services" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
         </div>
         <div className="container px-4 relative z-10 text-center animate-fade-in-up">
@@ -114,9 +117,7 @@ const HomeRepairs = () => {
       {/* Service Categories */}
       <section className="py-20">
         <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in-up">
-            Our Home Repair Services
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in-up">Common Home Repairs We Handle</h2>
           
           <div className="max-w-4xl mx-auto animate-fade-in">
             <Accordion type="single" collapsible className="space-y-4">
@@ -126,15 +127,13 @@ const HomeRepairs = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {interiorServices.map((service, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                    {interiorServices.map((service, index) => <li key={index} className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-medium text-foreground">{service.name}</span>
                           <span className="text-muted-foreground"> - {service.desc}</span>
                         </div>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -145,15 +144,13 @@ const HomeRepairs = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {exteriorServices.map((service, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                    {exteriorServices.map((service, index) => <li key={index} className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-medium text-foreground">{service.name}</span>
                           <span className="text-muted-foreground"> - {service.desc}</span>
                         </div>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -164,15 +161,13 @@ const HomeRepairs = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {kitchenBathroom.map((service, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                    {kitchenBathroom.map((service, index) => <li key={index} className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-medium text-foreground">{service.name}</span>
                           <span className="text-muted-foreground"> - {service.desc}</span>
                         </div>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -183,15 +178,13 @@ const HomeRepairs = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {electricalHvac.map((service, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                    {electricalHvac.map((service, index) => <li key={index} className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-medium text-foreground">{service.name}</span>
                           <span className="text-muted-foreground"> - {service.desc}</span>
                         </div>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -227,12 +220,10 @@ const HomeRepairs = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
-                      {monthlyTasks.map((task, index) => (
-                        <li key={index} className="flex items-start gap-3">
+                      {monthlyTasks.map((task, index) => <li key={index} className="flex items-start gap-3">
                           <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-foreground">{task}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </CardContent>
                 </Card>
@@ -246,12 +237,10 @@ const HomeRepairs = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
-                      {quarterlyTasks.map((task, index) => (
-                        <li key={index} className="flex items-start gap-3">
+                      {quarterlyTasks.map((task, index) => <li key={index} className="flex items-start gap-3">
                           <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-foreground">{task}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </CardContent>
                 </Card>
@@ -265,12 +254,10 @@ const HomeRepairs = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
-                      {annualTasks.map((task, index) => (
-                        <li key={index} className="flex items-start gap-3">
+                      {annualTasks.map((task, index) => <li key={index} className="flex items-start gap-3">
                           <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-foreground">{task}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </CardContent>
                 </Card>
@@ -284,12 +271,10 @@ const HomeRepairs = () => {
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
-                      {biannualTasks.map((task, index) => (
-                        <li key={index} className="flex items-start gap-3">
+                      {biannualTasks.map((task, index) => <li key={index} className="flex items-start gap-3">
                           <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-foreground">{task}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                   </CardContent>
                 </Card>
@@ -397,8 +382,6 @@ const HomeRepairs = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default HomeRepairs;
