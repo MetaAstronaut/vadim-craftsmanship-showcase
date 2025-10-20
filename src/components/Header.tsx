@@ -17,20 +17,20 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 z-50 w-full bg-primary/95 backdrop-blur-sm border-b border-primary-glow/20">
-      <div className="container flex h-20 items-center justify-between px-4">
+    <header className="fixed top-0 z-50 w-full bg-primary/90 backdrop-blur-md">
+      <div className="max-w-7xl mx-auto flex h-20 items-center justify-between px-8">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="The Vadim Group" className="h-12 w-12" />
-          <span className="text-xl font-bold text-white">The Vadim Group</span>
+          <img src={logo} alt="The Vadim Group" className="h-10 w-10" />
+          <span className="text-xl font-semibold text-white tracking-tight">The Vadim Group</span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => 
             link.isRoute ? (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-base font-medium text-white/90 hover:text-secondary transition-colors"
+                className="text-base font-normal text-white/80 hover:text-white transition-colors"
               >
                 {link.name}
               </Link>
@@ -38,7 +38,7 @@ const Header = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-medium text-white/90 hover:text-secondary transition-colors"
+                className="text-base font-normal text-white/80 hover:text-white transition-colors"
               >
                 {link.name}
               </a>
@@ -46,11 +46,11 @@ const Header = () => {
           )}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <a href="tel:4075550123" className="text-lg font-bold text-secondary hover:text-secondary-glow transition-colors">
+        <div className="hidden lg:flex items-center gap-6">
+          <a href="tel:4075550123" className="text-lg font-semibold text-secondary hover:text-secondary-glow transition-colors">
             (407) 555-0123
           </a>
-          <Button size="lg" className="bg-secondary hover:bg-secondary-glow text-white font-semibold">
+          <Button size="default" className="bg-secondary hover:bg-secondary-glow text-white font-semibold px-6">
             Get a Quote
           </Button>
         </div>
@@ -65,8 +65,8 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-primary-glow/20 bg-primary">
-          <nav className="container flex flex-col py-4 px-4 gap-4">
+        <div className="lg:hidden bg-primary/95 backdrop-blur-md">
+          <nav className="max-w-7xl mx-auto flex flex-col py-6 px-8 gap-4">
             {navLinks.map((link) => 
               link.isRoute ? (
                 <Link

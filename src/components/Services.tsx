@@ -30,31 +30,29 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
-      <div className="container px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+    <section className="section-padding bg-background">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6">Our Services</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Comprehensive repair solutions for every aspect of your life
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service) => (
             <Card
               key={service.title}
-              className="group hover:shadow-[var(--shadow-lg)] transition-all duration-500 hover:-translate-y-2 animate-fade-in-up border-border/50 backdrop-blur-sm bg-card/80 relative overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group hover:shadow-md transition-all duration-300 p-8"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <CardHeader className="relative">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-[var(--shadow-sm)]">
-                  <service.icon className="h-7 w-7 text-primary" />
+              <CardHeader className="p-0 mb-6">
+                <div className="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors duration-300">
+                  <service.icon className="h-8 w-8 text-secondary" />
                 </div>
-                <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">{service.title}</CardTitle>
+                <CardTitle className="text-xl font-medium">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="relative">
-                <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
+              <CardContent className="p-0">
+                <CardDescription className="text-base text-foreground/70">{service.description}</CardDescription>
               </CardContent>
             </Card>
           ))}

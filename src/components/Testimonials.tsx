@@ -45,16 +45,16 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+    <section className="section-padding bg-muted/30">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6">What Our Clients Say</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Real reviews from Google Business
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => {
             const isExpanded = expandedIndex === index;
             const shouldTruncate = testimonial.text.length > 150;
@@ -65,25 +65,24 @@ const Testimonials = () => {
             return (
               <Card
                 key={testimonial.name}
-                className="animate-fade-in-up transition-all duration-300 border-border/50 bg-card hover:shadow-lg relative"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="transition-all duration-300 p-6"
               >
-                <CardContent className="pt-6 pb-6">
+                <CardContent className="p-0">
                   {/* Google Icon */}
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-6 right-6">
                     <GoogleIcon />
                   </div>
 
                   {/* Header with Avatar and Name */}
-                  <div className="flex items-start gap-3 mb-4">
+                  <div className="flex items-start gap-4 mb-4">
                     {/* Avatar */}
-                    <div className={`${testimonial.color} rounded-full w-12 h-12 flex items-center justify-center text-white font-semibold text-lg flex-shrink-0`}>
+                    <div className={`${testimonial.color} w-12 h-12 flex items-center justify-center text-white font-semibold text-lg flex-shrink-0`}>
                       {testimonial.initials}
                     </div>
                     
                     {/* Name and Date */}
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-foreground text-lg">
+                      <h3 className="font-medium text-foreground text-lg">
                         {testimonial.name}
                       </h3>
                       <p className="text-sm text-muted-foreground">
@@ -100,7 +99,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* Review Text */}
-                  <p className="text-foreground leading-relaxed mb-2">
+                  <p className="text-foreground/80 leading-relaxed mb-2 text-base">
                     {displayText}
                   </p>
 
@@ -108,7 +107,7 @@ const Testimonials = () => {
                   {shouldTruncate && (
                     <button
                       onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                      className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+                      className="text-secondary hover:text-secondary-glow text-sm font-medium transition-colors"
                     >
                       {isExpanded ? "Show less" : "Read more"}
                     </button>

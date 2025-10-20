@@ -25,28 +25,27 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20">
-      <div className="container px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience You Can Trust</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+    <section className="section-padding bg-muted/30">
+      <div className="container-custom">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6">Experience You Can Trust</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             The Vadim Group combines traditional craftsmanship with modern techniques to deliver
             exceptional results across all repair disciplines
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {values.map((value, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {values.map((value) => (
             <div
               key={value.title}
-              className="text-center group animate-scale-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="text-center group"
             >
-              <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300 shadow-[var(--shadow-sm)] group-hover:shadow-[var(--shadow-glow)]">
+              <div className="w-20 h-20 bg-secondary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-secondary/20 transition-colors duration-300">
                 <value.icon className="h-10 w-10 text-secondary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">{value.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+              <h3 className="text-xl font-medium mb-4">{value.title}</h3>
+              <p className="text-base text-muted-foreground">{value.description}</p>
             </div>
           ))}
         </div>
