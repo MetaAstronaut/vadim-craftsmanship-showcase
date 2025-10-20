@@ -32,10 +32,7 @@ const Hero = () => {
 
       <div className="relative z-10 container-custom text-center px-4 max-w-5xl">
         {/* Premium Badge */}
-        <div className="inline-flex items-center space-x-2 mb-8 px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full">
-          <Shield className="w-4 h-4 text-secondary-light" />
-          <span className="text-sm text-white/90 tracking-widest uppercase font-medium">Trusted Since 2010</span>
-        </div>
+        
 
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight" style={{
         textShadow: '0 4px 20px rgba(0,0,0,0.4)'
