@@ -278,7 +278,7 @@ const HomeRepairs = () => {
               Home Maintenance Guide
             </h2>
             <p className="text-center text-muted-foreground mb-12 text-lg">
-              Stay ahead of repairs with our recommended maintenance schedule
+              Preventative Care Tips from The Vadim Group. Regular maintenance can prevent costly repairs and extend the life of your home's systems and structures. Here are our expert recommendations
             </p>
             
             <Tabs defaultValue="monthly" className="w-full animate-fade-in">
