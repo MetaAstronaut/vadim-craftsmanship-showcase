@@ -453,9 +453,54 @@ const HomeRepairs = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">
               Our Quality Process
             </h2>
-            <p className="text-center text-muted-foreground mb-16 text-lg">
+            <p className="text-center text-muted-foreground mb-12 text-lg">
               The Difference Is in the Details
             </p>
+            
+            <div className="max-w-4xl mx-auto mb-16 animate-fade-in">
+              <p className="text-lg text-foreground leading-relaxed mb-6">
+                At The Vadim Group, quality isn't an option — it's our foundation. Every finish, material, and fixture is chosen with care. Our network of specialists and craftsmen ensures that every surface, seam, and detail meets the highest standard of precision and design.
+              </p>
+              
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                We Deliver:
+              </h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Tailored solutions that reflect your lifestyle and brand</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Sustainable materials and modern techniques</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Flawless finishes that enhance comfort and value</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Transparent communication and project integrity</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Licensed professionals with years of specialized experience</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Premium materials sourced from trusted suppliers</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Code-compliant work that passes inspections</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">Clean job sites with respect for your property</span>
+                </div>
+              </div>
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
               <Card className="card-hover">
