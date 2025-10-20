@@ -294,12 +294,17 @@ const Contact = () => {
       <section className="py-16 bg-muted/30">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-muted border rounded-lg h-64 flex items-center justify-center mb-6">
-              <div className="text-center">
-                <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-                <p className="text-muted-foreground font-medium">Orlando, FL Service Area</p>
-                <p className="text-sm text-muted-foreground">50-mile radius coverage</p>
-              </div>
+            <div className="border rounded-lg overflow-hidden mb-6 shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.95102373245!2d-81.81330678125!3d28.538336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Orlando, FL Service Area Map"
+              />
             </div>
             <p className="text-center text-lg font-medium">
               Mobile service - we come to you!
