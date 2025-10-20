@@ -32,27 +32,35 @@ const Services = () => {
   return (
     <section className="section-padding bg-background">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6">Our Services</h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive repair solutions for every aspect of your life
+        <div className="text-center mb-20">
+          <div className="inline-block mb-6">
+            <span className="text-sm uppercase tracking-[0.2em] text-secondary font-semibold">What We Offer</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-semibold mb-8 text-foreground">Our Services</h2>
+          <div className="divider-elegant"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8 leading-relaxed">
+            Comprehensive repair solutions delivered with precision and care
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <Card
               key={service.title}
-              className="group hover:shadow-md transition-all duration-300 p-8"
+              className="card-premium group p-10 bg-card border-border/30 hover:border-secondary/30"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardHeader className="p-0 mb-6">
-                <div className="w-16 h-16 bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors duration-300">
-                  <service.icon className="h-8 w-8 text-secondary" />
+              <CardHeader className="p-0 mb-8">
+                <div className="relative mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center group-hover:from-secondary/30 group-hover:to-secondary/10 transition-all duration-500 relative overflow-hidden">
+                    <service.icon className="h-9 w-9 text-secondary relative z-10 transition-transform group-hover:scale-110 duration-500" />
+                    <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/5 transition-all duration-500"></div>
+                  </div>
                 </div>
-                <CardTitle className="text-xl font-medium">{service.title}</CardTitle>
+                <CardTitle className="text-2xl font-semibold tracking-tight">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="p-0">
-                <CardDescription className="text-base text-foreground/70">{service.description}</CardDescription>
+                <CardDescription className="text-base text-foreground/60 leading-relaxed">{service.description}</CardDescription>
               </CardContent>
             </Card>
           ))}
