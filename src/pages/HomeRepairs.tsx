@@ -67,18 +67,61 @@ const HomeRepairs = () => {
     name: "Appliance Installation",
     desc: "Dishwasher, garbage disposal, range hood, and built-in appliance installation"
   }];
-  const electricalHvac = [{
+  const electricalRepairs = [{
     name: "Outlet and Switch Replacement",
-    desc: "Upgrading outlets, GFCI installation, dimmer switches, and USB outlets"
+    desc: "Upgrading outlets, dimmer switches, and USB outlets"
   }, {
     name: "Light Fixture Installation",
-    desc: "Ceiling fans, chandeliers, recessed lighting, and outdoor fixtures"
+    desc: "Installing and upgrading interior and exterior lighting"
   }, {
-    name: "HVAC Vent Repair",
-    desc: "Vent cleaning, duct repair, register replacement, and airflow optimization"
+    name: "Ceiling Fan Installation and Repair",
+    desc: "Professional installation, balancing, and repair services"
+  }, {
+    name: "Circuit Breaker Troubleshooting",
+    desc: "Diagnosing and fixing electrical issues"
+  }, {
+    name: "GFCI Outlet Installation",
+    desc: "Safety outlet installation for wet areas"
+  }, {
+    name: "Electrical Panel Upgrades",
+    desc: "Modernizing electrical systems for increased capacity"
+  }, {
+    name: "Safety Inspections",
+    desc: "Comprehensive electrical system evaluation"
+  }];
+  
+  const structuralFoundation = [{
+    name: "Foundation Crack Repair",
+    desc: "Fixing cracks and preventing water intrusion"
+  }, {
+    name: "Settling Issues Assessment",
+    desc: "Professional evaluation of structural settling"
+  }, {
+    name: "Load-Bearing Wall Modifications",
+    desc: "Safe alterations to structural walls"
+  }, {
+    name: "Beam and Joist Reinforcement",
+    desc: "Strengthening structural support systems"
+  }, {
+    name: "Structural Inspection Services",
+    desc: "Detailed assessment of home structural integrity"
+  }];
+  
+  const hvacClimate = [{
+    name: "Vent Repair and Cleaning",
+    desc: "Ductwork maintenance and airflow optimization"
   }, {
     name: "Thermostat Installation",
-    desc: "Smart thermostat installation, programmable units, and system integration"
+    desc: "Smart and programmable thermostat setup"
+  }, {
+    name: "Ductwork Repair",
+    desc: "Sealing leaks and improving system efficiency"
+  }, {
+    name: "Insulation Installation",
+    desc: "Enhancing energy efficiency and comfort"
+  }, {
+    name: "Weatherstripping and Draft Prevention",
+    desc: "Sealing air leaks around doors and windows"
   }];
   const monthlyTasks = ["Test smoke and carbon monoxide detectors", "Check for plumbing leaks under sinks and around toilets", "Clean or replace HVAC filters", "Inspect weatherstripping around doors and windows", "Test GFCI outlets"];
   const quarterlyTasks = ["Clean gutters and downspouts", "Inspect roof for damaged shingles", "Check caulking around tubs, showers, and sinks", "Test garage door safety features", "Inspect foundation for cracks"];
@@ -174,11 +217,45 @@ const HomeRepairs = () => {
 
               <AccordionItem value="electrical" className="card-hover border rounded-lg px-6 bg-card">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
-                  Electrical & HVAC
+                  Electrical Repairs
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {electricalHvac.map((service, index) => <li key={index} className="flex items-start gap-3">
+                    {electricalRepairs.map((service, index) => <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-medium text-foreground">{service.name}</span>
+                          <span className="text-muted-foreground"> - {service.desc}</span>
+                        </div>
+                      </li>)}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="structural" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  Structural & Foundation
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid grid-cols-1 gap-4 pt-4">
+                    {structuralFoundation.map((service, index) => <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-medium text-foreground">{service.name}</span>
+                          <span className="text-muted-foreground"> - {service.desc}</span>
+                        </div>
+                      </li>)}
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="hvac" className="card-hover border rounded-lg px-6 bg-card">
+                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+                  HVAC & Climate Control
+                </AccordionTrigger>
+                <AccordionContent>
+                  <ul className="grid grid-cols-1 gap-4 pt-4">
+                    {hvacClimate.map((service, index) => <li key={index} className="flex items-start gap-3">
                         <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                         <div>
                           <span className="font-medium text-foreground">{service.name}</span>
