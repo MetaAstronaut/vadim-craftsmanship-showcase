@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Clock } from "lucide-react";
+import diyRepairsImg from "@/assets/blog/diy-repairs.jpg";
+import foundationProblemsImg from "@/assets/blog/foundation-problems.jpg";
+import repairCostsImg from "@/assets/blog/repair-costs.jpg";
+import seasonalMaintenanceImg from "@/assets/blog/seasonal-maintenance.jpg";
+import repairVsReplaceImg from "@/assets/blog/repair-vs-replace.jpg";
+import warrantyInsuranceImg from "@/assets/blog/warranty-insurance.jpg";
+import commonRepairsImg from "@/assets/blog/common-repairs.jpg";
+import chooseContractorImg from "@/assets/blog/choose-contractor.jpg";
+import emergencyRepairsImg from "@/assets/blog/emergency-repairs.jpg";
+import homeValueRoiImg from "@/assets/blog/home-value-roi.jpg";
 
 const Blog = () => {
-  const [email, setEmail] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
   const articles = [
     {
@@ -17,7 +26,7 @@ const Blog = () => {
       description: "Some repairs require professional expertise. Learn which projects to leave to the experts to avoid costly mistakes and safety hazards.",
       category: "Home Repairs",
       readingTime: "5 min",
-      image: "/placeholder.svg"
+      image: diyRepairsImg
     },
     {
       id: 2,
@@ -25,7 +34,7 @@ const Blog = () => {
       description: "Early detection can save thousands. Discover the warning signs of foundation issues and when to call a professional.",
       category: "Structural",
       readingTime: "7 min",
-      image: "/placeholder.svg"
+      image: foundationProblemsImg
     },
     {
       id: 3,
@@ -33,7 +42,7 @@ const Blog = () => {
       description: "Understanding how small problems become expensive disasters. Real examples of repair costs over time.",
       category: "Home Maintenance",
       readingTime: "4 min",
-      image: "/placeholder.svg"
+      image: repairCostsImg
     },
     {
       id: 4,
@@ -41,7 +50,7 @@ const Blog = () => {
       description: "Stay ahead of problems with our comprehensive seasonal maintenance guide for Florida homes.",
       category: "Home Maintenance",
       readingTime: "6 min",
-      image: "/placeholder.svg"
+      image: seasonalMaintenanceImg
     },
     {
       id: 5,
@@ -49,7 +58,7 @@ const Blog = () => {
       description: "Making smart decisions about your HVAC, roof, appliances, and more. Cost comparisons and lifespan expectations.",
       category: "Home Systems",
       readingTime: "8 min",
-      image: "/placeholder.svg"
+      image: repairVsReplaceImg
     },
     {
       id: 6,
@@ -57,7 +66,7 @@ const Blog = () => {
       description: "Know what's covered and what's not. Essential information every homeowner needs.",
       category: "Insurance",
       readingTime: "5 min",
-      image: "/placeholder.svg"
+      image: warrantyInsuranceImg
     },
     {
       id: 7,
@@ -65,7 +74,7 @@ const Blog = () => {
       description: "Prevention is cheaper than repair. Learn how to avoid the most frequent home issues.",
       category: "Home Maintenance",
       readingTime: "6 min",
-      image: "/placeholder.svg"
+      image: commonRepairsImg
     },
     {
       id: 8,
@@ -73,7 +82,7 @@ const Blog = () => {
       description: "Protect yourself from scams and ensure quality work. What to look for when hiring professionals.",
       category: "Tips & Advice",
       readingTime: "5 min",
-      image: "/placeholder.svg"
+      image: chooseContractorImg
     },
     {
       id: 9,
@@ -81,7 +90,7 @@ const Blog = () => {
       description: "Quick actions that can minimize damage during plumbing leaks, power outages, and other emergencies.",
       category: "Emergency",
       readingTime: "4 min",
-      image: "/placeholder.svg"
+      image: emergencyRepairsImg
     },
     {
       id: 10,
@@ -89,9 +98,21 @@ const Blog = () => {
       description: "Smart investments for homeowners. Which repairs and improvements offer the highest return.",
       category: "Home Value",
       readingTime: "6 min",
-      image: "/placeholder.svg"
+      image: homeValueRoiImg
     }
   ];
+
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(articles.map(article => article.category)));
+    return ["All", ...uniqueCategories];
+  }, []);
+
+  const filteredArticles = useMemo(() => {
+    if (selectedCategory === "All") {
+      return articles;
+    }
+    return articles.filter(article => article.category === selectedCategory);
+  }, [selectedCategory]);
 
   const getCategoryColor = (category: string) => {
     const colors: Record<string, string> = {
@@ -105,12 +126,6 @@ const Blog = () => {
       "Home Value": "bg-secondary/10 text-secondary-foreground border-secondary/20"
     };
     return colors[category] || "bg-muted text-foreground border-border";
-  };
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Subscribing email:", email);
-    setEmail("");
   };
 
   return (
@@ -128,11 +143,29 @@ const Blog = () => {
           </div>
         </section>
 
+        {/* Category Filter */}
+        <section className="py-8 px-4 border-b bg-muted/30">
+          <div className="container mx-auto">
+            <div className="flex flex-wrap gap-2 justify-center">
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
+                  onClick={() => setSelectedCategory(category)}
+                  className="transition-all"
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Blog Grid */}
         <section className="py-16 px-4">
           <div className="container mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {articles.map((article) => (
+              {filteredArticles.map((article) => (
                 <Card 
                   key={article.id} 
                   className="group relative overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
@@ -172,29 +205,6 @@ const Blog = () => {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Newsletter Section */}
-        <section className="bg-muted/50 py-16 px-4">
-          <div className="container mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-muted-foreground mb-8">
-              Get monthly home maintenance tips and exclusive offers
-            </p>
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1"
-              />
-              <Button type="submit" className="sm:w-auto">
-                Subscribe
-              </Button>
-            </form>
           </div>
         </section>
       </main>
