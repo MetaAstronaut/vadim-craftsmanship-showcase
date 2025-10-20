@@ -9,64 +9,71 @@ import { CheckCircle2 } from "lucide-react";
 
 const HomeRepairs = () => {
   const interiorServices = [
-    "Drywall Repair & Installation",
-    "Painting Services",
-    "Flooring Repair",
-    "Door Repairs",
-    "Window Repairs",
-    "Ceiling Repairs",
-    "Baseboard & Trim"
+    { name: "Drywall Repair & Installation", desc: "Fixing holes, cracks, water damage, and texture matching" },
+    { name: "Painting Services", desc: "Interior and exterior painting, color consultation, and specialty finishes" },
+    { name: "Flooring Repair", desc: "Hardwood refinishing, tile replacement, carpet repair, and vinyl installation" },
+    { name: "Door Repairs", desc: "Fixing squeaky hinges, alignment issues, lock installation, and door replacement" },
+    { name: "Window Repairs", desc: "Broken glass replacement, seal repairs, weatherproofing, and frame restoration" },
+    { name: "Ceiling Repairs", desc: "Water stain removal, popcorn ceiling removal, and crack repair" },
+    { name: "Baseboard & Trim", desc: "Installation, replacement, and custom millwork" }
   ];
 
   const exteriorServices = [
-    "Siding Repair",
-    "Roof Repairs",
-    "Gutter Services",
-    "Deck & Patio",
-    "Fence Repair",
-    "Pressure Washing",
-    "Weatherproofing"
+    { name: "Siding Repair", desc: "Vinyl, wood, and fiber cement siding repair and replacement" },
+    { name: "Roof Repairs", desc: "Shingle replacement, leak repair, flashing installation, and emergency repairs" },
+    { name: "Gutter Services", desc: "Cleaning, repair, installation, and gutter guard systems" },
+    { name: "Deck & Patio", desc: "Wood and composite deck repair, staining, sealing, and structural reinforcement" },
+    { name: "Fence Repair", desc: "Post replacement, panel repair, gate adjustment, and staining" },
+    { name: "Pressure Washing", desc: "House washing, driveway cleaning, deck restoration, and surface preparation" },
+    { name: "Weatherproofing", desc: "Sealing, caulking, insulation upgrades, and moisture barrier installation" }
   ];
 
   const kitchenBathroom = [
-    "Plumbing Fixes",
-    "Cabinet Repair",
-    "Countertop Repair",
-    "Tile & Grout",
-    "Appliance Installation"
+    { name: "Plumbing Fixes", desc: "Faucet repair, leak fixes, drain cleaning, and toilet repairs" },
+    { name: "Cabinet Repair", desc: "Hinge replacement, drawer repair, refinishing, and hardware upgrades" },
+    { name: "Countertop Repair", desc: "Chip repair, seam repair, resealing, and minor crack fixes" },
+    { name: "Tile & Grout", desc: "Tile replacement, grout repair and recoloring, caulking, and waterproofing" },
+    { name: "Appliance Installation", desc: "Dishwasher, garbage disposal, range hood, and built-in appliance installation" }
   ];
 
   const electricalHvac = [
-    "Outlet and switch replacement",
-    "Light fixture installation",
-    "HVAC vent repair",
-    "Thermostat installation"
+    { name: "Outlet and Switch Replacement", desc: "Upgrading outlets, GFCI installation, dimmer switches, and USB outlets" },
+    { name: "Light Fixture Installation", desc: "Ceiling fans, chandeliers, recessed lighting, and outdoor fixtures" },
+    { name: "HVAC Vent Repair", desc: "Vent cleaning, duct repair, register replacement, and airflow optimization" },
+    { name: "Thermostat Installation", desc: "Smart thermostat installation, programmable units, and system integration" }
   ];
 
   const monthlyTasks = [
     "Test smoke and carbon monoxide detectors",
-    "Check HVAC filters and replace if needed",
-    "Inspect plumbing for leaks",
-    "Clean garbage disposal",
-    "Test garage door safety features"
+    "Check for plumbing leaks under sinks and around toilets",
+    "Clean or replace HVAC filters",
+    "Inspect weatherstripping around doors and windows",
+    "Test GFCI outlets"
   ];
 
   const quarterlyTasks = [
-    "Deep clean kitchen exhaust fan",
-    "Inspect and clean gutters",
-    "Check weatherstripping on doors and windows",
-    "Test sump pump",
-    "Inspect caulking around tubs and showers"
+    "Clean gutters and downspouts",
+    "Inspect roof for damaged shingles",
+    "Check caulking around tubs, showers, and sinks",
+    "Test garage door safety features",
+    "Inspect foundation for cracks"
   ];
 
   const annualTasks = [
-    "Schedule professional HVAC maintenance",
-    "Inspect roof for damage",
-    "Clean dryer vents thoroughly",
-    "Check water heater and flush if needed",
-    "Inspect foundation for cracks",
-    "Service garage door opener",
-    "Deep clean and seal deck or patio"
+    "Service HVAC system",
+    "Inspect and clean chimney and fireplace",
+    "Check attic and basement for moisture and pests",
+    "Test sump pump (if applicable)",
+    "Inspect exterior paint and siding",
+    "Service water heater",
+    "Check deck and patio for structural issues"
+  ];
+
+  const biannualTasks = [
+    "Deep clean carpets and upholstery",
+    "Inspect and service septic system",
+    "Reseal driveway and walkways",
+    "Inspect and treat wood for termites"
   ];
 
   return (
@@ -118,11 +125,14 @@ const HomeRepairs = () => {
                   Interior Repairs
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
+                  <ul className="grid grid-cols-1 gap-4 pt-4">
                     {interiorServices.map((service, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">{service}</span>
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-medium text-foreground">{service.name}</span>
+                          <span className="text-muted-foreground"> - {service.desc}</span>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -134,11 +144,14 @@ const HomeRepairs = () => {
                   Exterior Repairs
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
+                  <ul className="grid grid-cols-1 gap-4 pt-4">
                     {exteriorServices.map((service, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">{service}</span>
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-medium text-foreground">{service.name}</span>
+                          <span className="text-muted-foreground"> - {service.desc}</span>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -150,11 +163,14 @@ const HomeRepairs = () => {
                   Kitchen & Bathroom
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
+                  <ul className="grid grid-cols-1 gap-4 pt-4">
                     {kitchenBathroom.map((service, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">{service}</span>
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-medium text-foreground">{service.name}</span>
+                          <span className="text-muted-foreground"> - {service.desc}</span>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -166,11 +182,14 @@ const HomeRepairs = () => {
                   Electrical & HVAC
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4">
+                  <ul className="grid grid-cols-1 gap-4 pt-4">
                     {electricalHvac.map((service, index) => (
-                      <li key={index} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">{service}</span>
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                        <div>
+                          <span className="font-medium text-foreground">{service.name}</span>
+                          <span className="text-muted-foreground"> - {service.desc}</span>
+                        </div>
                       </li>
                     ))}
                   </ul>
@@ -193,10 +212,11 @@ const HomeRepairs = () => {
             </p>
             
             <Tabs defaultValue="monthly" className="w-full animate-fade-in">
-              <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-8">
+              <TabsList className="grid w-full grid-cols-4 max-w-3xl mx-auto mb-8">
                 <TabsTrigger value="monthly">Monthly</TabsTrigger>
                 <TabsTrigger value="quarterly">Quarterly</TabsTrigger>
                 <TabsTrigger value="annual">Annual</TabsTrigger>
+                <TabsTrigger value="biannual">Every 2-3 Years</TabsTrigger>
               </TabsList>
               
               <TabsContent value="monthly">
@@ -255,7 +275,112 @@ const HomeRepairs = () => {
                   </CardContent>
                 </Card>
               </TabsContent>
+              
+              <TabsContent value="biannual">
+                <Card className="card-hover">
+                  <CardHeader>
+                    <CardTitle>Every 2-3 Years</CardTitle>
+                    <CardDescription>Long-term maintenance for optimal home care</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-3">
+                      {biannualTasks.map((task, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-foreground">{task}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </TabsContent>
             </Tabs>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Homes Need Regular Repairs */}
+      <section className="py-20">
+        <div className="container px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">
+              Why Homes Need Regular Repairs
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg">
+              Understanding the Natural Aging Process
+            </p>
+            
+            <div className="animate-fade-in space-y-8">
+              <p className="text-lg text-foreground leading-relaxed">
+                Every home, regardless of quality or age, requires ongoing maintenance and repairs. Understanding why repairs are necessary helps homeowners make informed decisions and budget appropriately.
+              </p>
+              
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                  Common Causes of Home Repair Needs:
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">1.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">Wear and Tear</span>
+                      <span className="text-muted-foreground"> - Daily use gradually degrades materials, finishes, and mechanical systems</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">2.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">Weather Exposure</span>
+                      <span className="text-muted-foreground"> - Sun, rain, wind, humidity, and temperature fluctuations affect exterior and interior elements</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">3.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">Settling</span>
+                      <span className="text-muted-foreground"> - Homes naturally settle over time, causing minor cracks and alignment issues</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">4.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">Material Degradation</span>
+                      <span className="text-muted-foreground"> - Wood rots, metal corrodes, rubber seals crack, and paint fades</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">5.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">System Aging</span>
+                      <span className="text-muted-foreground"> - Plumbing, electrical, and HVAC systems have limited lifespans</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">6.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">Improper Installation</span>
+                      <span className="text-muted-foreground"> - Previous substandard work often reveals itself over time</span>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-primary font-bold text-lg flex-shrink-0">7.</span>
+                    <div>
+                      <span className="font-semibold text-foreground">Neglect</span>
+                      <span className="text-muted-foreground"> - Deferred maintenance leads to compound problems</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-muted/50 p-6 rounded-lg border border-border">
+                <h3 className="text-xl font-semibold mb-3 text-foreground">
+                  The Cost of Waiting
+                </h3>
+                <p className="text-foreground leading-relaxed">
+                  Delaying repairs often leads to exponentially higher costs. A small roof leak ignored can result in thousands in water damage, mold remediation, and structural repairs. Our team helps you prioritize repairs to prevent small issues from becoming major problems.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
