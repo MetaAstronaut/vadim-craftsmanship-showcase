@@ -59,9 +59,26 @@ export default {
         },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0.5rem",
+        md: "0.375rem",
+        sm: "0.25rem",
+      },
+      fontSize: {
+        'base': '1.125rem',
+        'lg': '1.25rem',
+        'xl': '1.375rem',
+        '2xl': '1.75rem',
+        '3xl': '2.25rem',
+        '4xl': '2.875rem',
+        '5xl': '3.5rem',
+        '6xl': '4.25rem',
+        '7xl': '5rem',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+        '26': '6.5rem',
+        '30': '7.5rem',
       },
       keyframes: {
         "accordion-down": {
