@@ -15,41 +15,58 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${homeRepairsHero})` }}
       >
-        <div className="absolute inset-0 bg-primary/70" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="container relative z-10 px-4 py-32 md:py-40">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+      <div className="container relative z-10 px-6">
+        <div className="flex flex-col items-center justify-center text-center space-y-8 md:space-y-12">
+          {/* Main Headline */}
+          <h1 
+            className="text-4xl md:text-6xl font-bold text-white leading-tight"
+            style={{ 
+              textShadow: '2px 4px 8px rgba(0, 0, 0, 0.3)',
+              fontWeight: 700 
+            }}
+          >
             We Make Every Space Feel Like Home
           </h1>
-          <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-12 min-h-[4rem] md:min-h-[5rem] flex items-center justify-center">
-            <span>Professional </span>
+
+          {/* Animated Subheadline */}
+          <div 
+            className="text-2xl md:text-5xl font-bold text-white flex flex-wrap items-center justify-center gap-2 md:gap-3"
+            style={{ 
+              textShadow: '2px 4px 8px rgba(0, 0, 0, 0.3)',
+              fontWeight: 700 
+            }}
+          >
+            <span>Professional</span>
             <span 
               key={currentText}
-              className="ml-3 inline-block animate-fade-in"
-              style={{ color: "#ff8800" }}
+              className="inline-block animate-fade-in"
+              style={{ color: "#ed8936" }}
             >
               {rotatingTexts[currentText]}
             </span>
-            <span className="ml-3">Services in Orlando</span>
+            <span>Services in Orlando</span>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-6 pt-4">
             <Button 
-              size="lg" 
-              className="text-lg px-10 py-7 h-auto font-bold bg-secondary hover:bg-secondary-glow text-white shadow-lg"
+              size="default"
+              className="text-base px-8 py-6 h-auto font-semibold bg-secondary hover:bg-secondary-glow text-white shadow-md"
             >
               Get a Free Quote
             </Button>
             <Button 
-              size="lg" 
+              size="default"
               variant="outline" 
-              className="text-lg px-10 py-7 h-auto font-bold border-2 border-white/90 bg-transparent text-white hover:bg-white/10 hover:border-white backdrop-blur-sm"
+              className="text-base px-8 py-6 h-auto font-semibold border-2 border-white/90 bg-transparent text-white hover:bg-white/10 hover:border-white"
             >
               Emergency Repair Service
             </Button>
