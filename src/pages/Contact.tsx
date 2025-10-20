@@ -76,26 +76,24 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16 md:py-24">
-        <div className="container px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground">
-              Ready to transform your space? Contact us today for a free consultation and quote.
-            </p>
-          </div>
+      <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-background">
+        <div className="container-custom text-center px-4">
+          <h1 className="text-5xl md:text-6xl font-semibold mb-6">
+            Get in Touch
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Ready to transform your space? Contact us today for a free consultation and quote.
+          </p>
         </div>
       </section>
 
       {/* Two Column Layout */}
-      <section className="py-16 md:py-20">
-        <div className="container px-4">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             {/* Left Column - Contact Form */}
-            <div className="bg-card border rounded-lg p-6 md:p-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6">Request a Free Quote</h2>
+            <div className="bg-card border p-8">
+              <h2 className="text-3xl font-semibold mb-8">Request a Free Quote</h2>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name */}
@@ -222,9 +220,9 @@ const Contact = () => {
             </div>
 
             {/* Right Column - Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-10">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold mb-6">Let's Connect</h2>
+                <h2 className="text-3xl font-semibold mb-8">Let's Connect</h2>
               </div>
 
               {/* Phone */}
@@ -291,10 +289,10 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="border rounded-lg overflow-hidden mb-6 shadow-lg">
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <div className="border overflow-hidden mb-8">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.95102373245!2d-81.81330678125!3d28.538336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                 width="100%"

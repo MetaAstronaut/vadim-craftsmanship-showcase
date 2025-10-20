@@ -134,19 +134,19 @@ const Blog = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-20 px-4">
-          <div className="container mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Insights & Tips</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-background">
+          <div className="container-custom text-center px-4">
+            <h1 className="text-5xl md:text-6xl font-semibold mb-6">Insights & Tips</h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Expert advice on home maintenance, repairs, and improvements
             </p>
           </div>
         </section>
 
         {/* Category Filter */}
-        <section className="py-8 px-4 border-b bg-muted/30">
-          <div className="container mx-auto">
-            <div className="flex flex-wrap gap-2 justify-center">
+        <section className="py-12 border-b bg-muted/30">
+          <div className="container-custom">
+            <div className="flex flex-wrap gap-3 justify-center">
               {categories.map((category) => (
                 <Button
                   key={category}
@@ -162,9 +162,9 @@ const Blog = () => {
         </section>
 
         {/* Blog Grid */}
-        <section className="py-16 px-4">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="section-padding bg-background">
+          <div className="container-custom">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArticles.map((article) => (
                 <Card 
                   key={article.id} 

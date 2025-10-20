@@ -130,26 +130,26 @@ const HomeRepairs = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Home Repair Services" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
-        <div className="container px-4 relative z-10 text-center animate-fade-in-up">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-gradient">
+        <div className="container-custom relative z-10 text-center">
+          <h1 className="text-5xl md:text-6xl font-semibold text-white mb-6">
             Comprehensive Home Repair Services
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Your Trusted Partner for Every Home Repair Need
           </p>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <p className="text-lg md:text-xl text-foreground leading-relaxed">
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               At The Vadim Group, we understand that your home is your sanctuary. Whether you need a quick fix or a complete renovation, our experienced team handles every project with the same level of care and professionalism.
             </p>
           </div>
@@ -157,13 +157,13 @@ const HomeRepairs = () => {
       </section>
 
       {/* Service Categories */}
-      <section className="py-20">
-        <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in-up">Common Home Repairs We Handle</h2>
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16">Common Home Repairs We Handle</h2>
           
-          <div className="max-w-4xl mx-auto animate-fade-in">
+          <div className="max-w-5xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="interior" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="interior" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Interior Repairs
                 </AccordionTrigger>
@@ -180,7 +180,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="exterior" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="exterior" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Exterior Repairs
                 </AccordionTrigger>
@@ -197,7 +197,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="kitchen" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="kitchen" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Kitchen & Bathroom
                 </AccordionTrigger>
@@ -214,7 +214,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="electrical" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="electrical" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Electrical Repairs
                 </AccordionTrigger>
@@ -231,7 +231,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="structural" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="structural" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Structural & Foundation
                 </AccordionTrigger>
@@ -248,7 +248,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="hvac" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="hvac" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   HVAC & Climate Control
                 </AccordionTrigger>
@@ -270,17 +270,17 @@ const HomeRepairs = () => {
       </section>
 
       {/* Home Maintenance Guide */}
-      <section className="py-20 bg-muted/30">
-        <div className="container px-4">
+      <section className="section-padding bg-background">
+        <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
               Home Maintenance Guide
             </h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
-              Preventative Care Tips from The Vadim Group. Regular maintenance can prevent costly repairs and extend the life of your home's systems and structures. Here are our expert recommendations
+            <p className="text-center text-muted-foreground mb-16 text-lg max-w-3xl mx-auto">
+              Regular maintenance can prevent costly repairs and extend the life of your home's systems and structures
             </p>
             
-            <Tabs defaultValue="monthly" className="w-full animate-fade-in">
+            <Tabs defaultValue="monthly" className="w-full">
               <TabsList className="grid w-full grid-cols-4 max-w-3xl mx-auto mb-8">
                 <TabsTrigger value="monthly">Monthly</TabsTrigger>
                 <TabsTrigger value="quarterly">Quarterly</TabsTrigger>
@@ -289,7 +289,7 @@ const HomeRepairs = () => {
               </TabsList>
               
               <TabsContent value="monthly">
-                <Card className="card-hover">
+                <Card>
                   <CardHeader>
                     <CardTitle>Monthly Tasks</CardTitle>
                     <CardDescription>Essential checks to perform every month</CardDescription>
@@ -306,7 +306,7 @@ const HomeRepairs = () => {
               </TabsContent>
               
               <TabsContent value="quarterly">
-                <Card className="card-hover">
+                <Card>
                   <CardHeader>
                     <CardTitle>Quarterly Tasks</CardTitle>
                     <CardDescription>Important maintenance every 3 months</CardDescription>
@@ -323,7 +323,7 @@ const HomeRepairs = () => {
               </TabsContent>
               
               <TabsContent value="annual">
-                <Card className="card-hover">
+                <Card>
                   <CardHeader>
                     <CardTitle>Annual Tasks</CardTitle>
                     <CardDescription>Comprehensive yearly maintenance checklist</CardDescription>
@@ -340,7 +340,7 @@ const HomeRepairs = () => {
               </TabsContent>
               
               <TabsContent value="biannual">
-                <Card className="card-hover">
+                <Card>
                   <CardHeader>
                     <CardTitle>Every 2-3 Years</CardTitle>
                     <CardDescription>Long-term maintenance for optimal home care</CardDescription>
@@ -361,23 +361,23 @@ const HomeRepairs = () => {
       </section>
 
       {/* Why Homes Need Regular Repairs */}
-      <section className="py-20">
-        <div className="container px-4">
+      <section className="section-padding bg-background">
+        <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
               Why Homes Need Regular Repairs
             </h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
+            <p className="text-center text-muted-foreground mb-16 text-lg">
               Understanding the Natural Aging Process
             </p>
             
-            <div className="animate-fade-in space-y-8">
-              <p className="text-lg text-foreground leading-relaxed">
+            <div className="space-y-10">
+              <p className="text-base text-muted-foreground">
                 Every home, regardless of quality or age, requires ongoing maintenance and repairs. Understanding why repairs are necessary helps homeowners make informed decisions and budget appropriately.
               </p>
               
               <div>
-                <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                <h3 className="text-2xl font-medium mb-8">
                   Common Causes of Home Repair Needs:
                 </h3>
                 <div className="space-y-4">
@@ -433,11 +433,11 @@ const HomeRepairs = () => {
                 </div>
               </div>
               
-              <div className="bg-muted/50 p-6 rounded-lg border border-border">
-                <h3 className="text-xl font-semibold mb-3 text-foreground">
+              <div className="bg-muted/30 p-8 border border-border">
+                <h3 className="text-xl font-medium mb-4">
                   The Cost of Waiting
                 </h3>
-                <p className="text-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground">
                   Delaying repairs often leads to exponentially higher costs. A small roof leak ignored can result in thousands in water damage, mold remediation, and structural repairs. Our team helps you prioritize repairs to prevent small issues from becoming major problems.
                 </p>
               </div>
@@ -447,22 +447,22 @@ const HomeRepairs = () => {
       </section>
 
       {/* Our Quality Process Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container px-4">
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 animate-fade-in-up">
+            <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
               Our Quality Process
             </h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
+            <p className="text-center text-muted-foreground mb-16 text-lg">
               The Difference Is in the Details
             </p>
             
-            <div className="max-w-4xl mx-auto mb-16 animate-fade-in">
-              <p className="text-lg text-foreground leading-relaxed mb-6">
+            <div className="max-w-4xl mx-auto mb-16">
+              <p className="text-base text-muted-foreground mb-8">
                 At The Vadim Group, quality isn't an option — it's our foundation. Every finish, material, and fixture is chosen with care. Our network of specialists and craftsmen ensures that every surface, seam, and detail meets the highest standard of precision and design.
               </p>
               
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+              <h3 className="text-2xl font-medium mb-8">
                 We Deliver:
               </h3>
               
@@ -502,11 +502,11 @@ const HomeRepairs = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
-              <Card className="card-hover">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <ClipboardCheck className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">1</span>
@@ -520,10 +520,10 @@ const HomeRepairs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-hover">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <FileText className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">2</span>
@@ -537,10 +537,10 @@ const HomeRepairs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-hover">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <Calendar className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">3</span>
@@ -554,10 +554,10 @@ const HomeRepairs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-hover">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <Wrench className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">4</span>
@@ -571,10 +571,10 @@ const HomeRepairs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-hover">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <Search className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">5</span>
@@ -588,10 +588,10 @@ const HomeRepairs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-hover">
+              <Card>
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <Handshake className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">6</span>
@@ -605,10 +605,10 @@ const HomeRepairs = () => {
                 </CardContent>
               </Card>
 
-              <Card className="card-hover md:col-span-2 lg:col-span-3 lg:max-w-md lg:mx-auto">
+              <Card className="md:col-span-2 lg:col-span-3 lg:max-w-md lg:mx-auto">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-2">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center">
                       <ShieldCheck className="h-6 w-6 text-primary" />
                     </div>
                     <span className="text-2xl font-bold text-primary">7</span>
@@ -627,15 +627,15 @@ const HomeRepairs = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in-up">
+      <section className="section-padding bg-background">
+        <div className="container-custom">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16">
               Common Home Repair Questions Answered
             </h2>
             
-            <Accordion type="single" collapsible className="space-y-4 animate-fade-in">
-              <AccordionItem value="cost" className="card-hover border rounded-lg px-6 bg-card">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="cost" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   How much does a typical home repair cost?
                 </AccordionTrigger>
@@ -646,7 +646,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="response" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="response" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   How quickly can you respond to repair requests?
                 </AccordionTrigger>
@@ -657,7 +657,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="licensed" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="licensed" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Are you licensed and insured?
                 </AccordionTrigger>
@@ -668,7 +668,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="warranty" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="warranty" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Do you offer warranties on your work?
                 </AccordionTrigger>
@@ -679,7 +679,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="size" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="size" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Can you handle both small repairs and large renovations?
                 </AccordionTrigger>
@@ -690,7 +690,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="presence" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="presence" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   Do I need to be home during the repair?
                 </AccordionTrigger>
@@ -701,7 +701,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="additional" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="additional" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   What if the problem is worse than initially thought?
                 </AccordionTrigger>
@@ -712,7 +712,7 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="prioritize" className="card-hover border rounded-lg px-6 bg-card">
+              <AccordionItem value="prioritize" className="border bg-card p-6">
                 <AccordionTrigger className="text-xl font-semibold hover:no-underline">
                   How do I know what repairs to prioritize?
                 </AccordionTrigger>
@@ -728,9 +728,9 @@ const HomeRepairs = () => {
       </section>
 
       {/* Emergency Services Banner */}
-      <section className="py-6 bg-destructive/10 border-y border-destructive/20">
-        <div className="container px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+      <section className="py-10 bg-destructive/10 border-y border-destructive/20">
+        <div className="container-custom">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-center sm:text-left">
             <AlertCircle className="h-8 w-8 text-destructive flex-shrink-0" />
             <div className="flex-1 max-w-2xl">
               <p className="text-lg font-semibold text-foreground">
@@ -753,17 +753,17 @@ const HomeRepairs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Fix Your Home?</h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+      <section className="section-padding bg-primary text-primary-foreground">
+        <div className="container-custom text-center">
+          <h2 className="text-4xl md:text-5xl font-semibold mb-6">Ready to Fix Your Home?</h2>
+          <p className="text-lg mb-10 opacity-90 max-w-3xl mx-auto">
             Contact us today for a free estimate and let us restore your home to perfection.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button 
               size="lg" 
               variant="secondary"
-              className="text-lg px-8 py-6"
+              className="text-base px-8"
               asChild
             >
               <a href="tel:+1234567890" className="flex items-center gap-2">
@@ -774,7 +774,7 @@ const HomeRepairs = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="text-lg px-8 py-6 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="text-base px-8"
               asChild
             >
               <a href="#contact" className="flex items-center gap-2">
