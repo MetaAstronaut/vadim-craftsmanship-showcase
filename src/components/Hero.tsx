@@ -49,8 +49,7 @@ const Hero = () => {
           className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] tracking-tight"
           style={{ textShadow: '0 4px 20px rgba(0,0,0,0.4)' }}
         >
-          Crafting Excellence<br />
-          <span className="text-gradient">In Every Detail</span>
+          We Make Every Space Feel Like Home
         </h1>
 
         <div className="divider-elegant opacity-60"></div>
