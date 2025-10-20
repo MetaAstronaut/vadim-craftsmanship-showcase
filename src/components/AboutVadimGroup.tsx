@@ -1,4 +1,4 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Home, Building2, Ship, Car, ClipboardList, AlertCircle, Calendar } from "lucide-react";
 import vadimPortrait from "@/assets/vadim-portrait.jpg";
 
 const AboutVadimGroup = () => {
@@ -7,6 +7,16 @@ const AboutVadimGroup = () => {
     "We work with precision — on time and on budget",
     "We deliver results that not only last but elevate how you live and work",
     "We stand behind our work with comprehensive warranties and guarantees",
+  ];
+
+  const expertise = [
+    { icon: Home, text: "Home renovations and custom builds" },
+    { icon: Building2, text: "Business and commercial remodeling" },
+    { icon: Ship, text: "Boat and RV maintenance and redesign" },
+    { icon: Car, text: "Luxury car restoration and detailing" },
+    { icon: ClipboardList, text: "Full-service project management" },
+    { icon: AlertCircle, text: "Emergency repair services" },
+    { icon: Calendar, text: "Preventative maintenance programs" },
   ];
 
   return (
@@ -27,7 +37,7 @@ const AboutVadimGroup = () => {
               and refined aesthetics.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-6 mb-8">
               <h3 className="text-2xl font-bold text-foreground">Our Promise:</h3>
               <ul className="space-y-4">
                 {promises.map((promise, index) => (
@@ -41,6 +51,25 @@ const AboutVadimGroup = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-foreground">Our Expertise Includes:</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {expertise.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors animate-slide-in-left"
+                      style={{ animationDelay: `${(index + 4) * 100}ms` }}
+                    >
+                      <Icon className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-foreground leading-relaxed">{item.text}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
