@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import heroImage from "@/assets/home-repairs-hero.jpg";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Phone, MessageSquare } from "lucide-react";
+import { Button } from "@/components/ui/button";
 const HomeRepairs = () => {
   const interiorServices = [{
     name: "Drywall Repair & Installation",
@@ -452,7 +453,30 @@ const HomeRepairs = () => {
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
             Contact us today for a free estimate and let us restore your home to perfection.
           </p>
-          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              size="lg" 
+              variant="secondary"
+              className="text-lg px-8 py-6"
+              asChild
+            >
+              <a href="tel:+1234567890" className="flex items-center gap-2">
+                <Phone className="h-5 w-5" />
+                Call Us Now
+              </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="text-lg px-8 py-6 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              asChild
+            >
+              <a href="#contact" className="flex items-center gap-2">
+                <MessageSquare className="h-5 w-5" />
+                Free Estimate
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
