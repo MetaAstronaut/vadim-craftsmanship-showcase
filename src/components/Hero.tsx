@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import homeRepairsHero from "@/assets/home-repairs-hero.jpg";
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
+  
   const rotatingTexts = ["Home Repair", "Commercial", "Marine & RV", "Automotive", "Emergency"];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,16 +12,10 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   return <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Parallax Background */}
-      <div className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-75" style={{
-      backgroundImage: `url(${homeRepairsHero})`,
-      transform: `translateY(${scrollY * 0.5}px) scale(1.1)`
+      <div className="absolute inset-0 z-0 bg-cover bg-center" style={{
+      backgroundImage: `url(${homeRepairsHero})`
     }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-primary/90" />
       </div>
