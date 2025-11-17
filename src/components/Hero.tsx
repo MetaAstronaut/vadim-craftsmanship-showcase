@@ -5,7 +5,7 @@ import homeRepairsHero from "@/assets/home-repairs-hero.jpg";
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
   
-  const rotatingTexts = ["Home Repair", "Commercial", "Marine & RV", "Automotive", "Emergency"];
+  const rotatingTexts = ["Home Repair", "Commercial", "Marine & RV"];
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentText(prev => (prev + 1) % rotatingTexts.length);
