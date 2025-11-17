@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Building2, 
   Paintbrush, 
@@ -12,32 +11,30 @@ import {
   Droplet,
   Armchair,
   Sparkles,
-  Settings,
-  CheckCircle2
+  ArrowRight
 } from "lucide-react";
 
 const OtherServices = () => {
   const commercialServices = [
-    { icon: Building2, name: "Office renovations and updates" },
-    { icon: Building2, name: "Retail space design and build-outs" },
-    { icon: Paintbrush, name: "Commercial painting and flooring" },
-    { icon: AlertCircle, name: "Emergency repair services" },
+    { icon: Building2, name: "Office renovations and updates", accent: "from-blue-500/20 to-blue-600/5" },
+    { icon: Building2, name: "Retail space design and build-outs", accent: "from-blue-500/20 to-blue-600/5" },
+    { icon: Paintbrush, name: "Commercial painting and flooring", accent: "from-blue-500/20 to-blue-600/5" },
+    { icon: AlertCircle, name: "Emergency repair services", accent: "from-blue-500/20 to-blue-600/5" },
   ];
 
   const marineServices = [
-    { icon: Ship, name: "Interior cabin repairs and upgrades" },
-    { icon: Sparkles, name: "Gel coat repair and restoration" },
-    { icon: Ship, name: "Teak and wood refinishing" },
-    { icon: Armchair, name: "Upholstery repair and replacement" },
-    { icon: Lightbulb, name: "Electrical system troubleshooting" },
-    { icon: Droplet, name: "Plumbing repairs" },
-    { icon: Wrench, name: "Structural repairs" },
-    { icon: Sparkles, name: "Cosmetic restoration" },
+    { icon: Ship, name: "Interior cabin repairs and upgrades", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Sparkles, name: "Gel coat repair and restoration", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Ship, name: "Teak and wood refinishing", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Armchair, name: "Upholstery repair and replacement", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Lightbulb, name: "Electrical system troubleshooting", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Droplet, name: "Plumbing repairs", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Wrench, name: "Structural repairs", accent: "from-cyan-500/20 to-cyan-600/5" },
+    { icon: Sparkles, name: "Cosmetic restoration", accent: "from-cyan-500/20 to-cyan-600/5" },
   ];
 
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Header />
       
       {/* Hero Section */}
@@ -48,18 +45,16 @@ const OtherServices = () => {
         
         {/* Animated accent elements */}
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-32 right-1/3 w-[400px] h-[400px] bg-secondary-glow/8 rounded-full blur-[140px]" />
+        <div className="absolute bottom-32 right-1/3 w-[500px] h-[500px] bg-secondary-glow/8 rounded-full blur-[140px]" />
         
-        <div className="container-custom text-center px-4 relative z-10 py-32">
+        <div className="container-custom text-center px-6 relative z-10 py-32">
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-white tracking-tight leading-[1.05]">
             Specialized Services
           </h1>
           
           {/* Decorative line */}
-          <div className="flex items-center gap-4 py-2 justify-center mb-6">
-            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
-            <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
-            <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+          <div className="py-2 mb-6 flex justify-center">
+            <div className="h-[2px] w-32 bg-gradient-to-r from-secondary-glow to-transparent" />
           </div>
           
           <p className="text-xl md:text-2xl text-white/85 max-w-3xl mx-auto leading-relaxed font-light">
@@ -69,117 +64,155 @@ const OtherServices = () => {
       </section>
 
       {/* Commercial Services Section */}
-      <section className="py-24 bg-background relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-32 left-0 w-[500px] h-[500px] bg-tertiary/5 rounded-full blur-[120px]" />
         
         <div className="container-custom relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500/10 to-blue-600/5 rounded-2xl mb-8 shadow-lg">
-              <Building2 className="h-10 w-10 text-blue-500" />
+          {/* Section header - asymmetric design */}
+          <div className="max-w-4xl mb-20">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-[2px] w-12 bg-secondary" />
+              <span className="text-sm uppercase tracking-[0.25em] text-secondary-dark font-semibold">Commercial Solutions</span>
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-foreground">
               Commercial & Business Spaces
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Your business environment impacts productivity, brand perception, and customer experience. 
               The Vadim Group provides comprehensive commercial repair and renovation services.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Services grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-16">
             {commercialServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="group p-6 border-2 border-border/50 hover:border-secondary/50 transition-all duration-300 hover:shadow-premium bg-card/50 backdrop-blur-sm">
-                  <CardHeader className="p-0 mb-4">
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 text-blue-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                      <CardTitle className="text-base font-medium">
-                        {service.name}
-                      </CardTitle>
+                <div 
+                  key={index} 
+                  className="group relative"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {/* Card with premium styling */}
+                  <div className="relative h-full bg-card border-2 border-card-border hover:border-secondary/40 rounded-2xl p-8 transition-all duration-500 hover:shadow-premium-lg hover:-translate-y-2">
+                    {/* Decorative corner accent */}
+                    <div className="absolute top-0 right-0 w-16 h-16 opacity-50">
+                      <div className={`absolute top-0 right-0 w-full h-full bg-gradient-to-br ${service.accent} rounded-bl-3xl`} />
                     </div>
-                  </CardHeader>
-                </Card>
+
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${service.accent} flex items-center justify-center rounded-xl group-hover:scale-110 transition-all duration-500`}>
+                        <Icon className="h-7 w-7 text-blue-500 relative z-10" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="font-serif text-lg md:text-xl font-semibold text-foreground leading-tight">
+                      {service.name}
+                    </h3>
+                  </div>
+                </div>
               );
             })}
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="group bg-secondary hover:bg-secondary-light text-white border-0 px-12 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1">
-              GET A CONSULTATION
+            <Button size="lg" className="group bg-secondary hover:bg-secondary-light text-white border-0 text-base px-10 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1">
+              Get a Consultation
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Marine & RV Services Section */}
-      <section className="py-24 bg-muted/30 relative overflow-hidden">
+      <section className="section-padding bg-muted/20 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-tertiary/5 rounded-full blur-[100px]" />
         
         <div className="container-custom relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 rounded-2xl mb-8 shadow-lg">
-              <Ship className="h-10 w-10 text-cyan-500" />
+          {/* Section header - asymmetric design */}
+          <div className="max-w-4xl mb-20">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-[2px] w-12 bg-secondary" />
+              <span className="text-sm uppercase tracking-[0.25em] text-secondary-dark font-semibold">Marine & RV</span>
             </div>
-            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 tracking-tight">
+            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 text-foreground">
               Marine & RV Services
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
               Whether it's your weekend escape or your home on wheels, we provide specialized repair and maintenance 
               services for boats and RVs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Services grid - staggered layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-16">
             {marineServices.map((service, index) => {
               const Icon = service.icon;
               return (
-                <Card key={index} className="group p-6 border-2 border-border/50 hover:border-secondary/50 transition-all duration-300 hover:shadow-premium bg-card/50 backdrop-blur-sm">
-                  <CardHeader className="p-0 mb-4">
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 text-cyan-500 flex-shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                      <CardTitle className="text-base font-medium">
-                        {service.name}
-                      </CardTitle>
+                <div 
+                  key={index} 
+                  className={`group relative ${index % 4 === 1 ? 'lg:mt-8' : ''}`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {/* Card with premium styling */}
+                  <div className="relative h-full bg-card border-2 border-card-border hover:border-secondary/40 rounded-2xl p-8 transition-all duration-500 hover:shadow-premium-lg hover:-translate-y-2">
+                    {/* Decorative corner accent */}
+                    <div className="absolute top-0 right-0 w-16 h-16 opacity-50">
+                      <div className={`absolute top-0 right-0 w-full h-full bg-gradient-to-br ${service.accent} rounded-bl-3xl`} />
                     </div>
-                  </CardHeader>
-                </Card>
+
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${service.accent} flex items-center justify-center rounded-xl group-hover:scale-110 transition-all duration-500`}>
+                        <Icon className="h-7 w-7 text-cyan-500 relative z-10" />
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="font-serif text-lg md:text-xl font-semibold text-foreground leading-tight">
+                      {service.name}
+                    </h3>
+                  </div>
+                </div>
               );
             })}
           </div>
 
           <div className="text-center">
-            <Button size="lg" className="group bg-secondary hover:bg-secondary-light text-white border-0 px-12 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1">
-              GET A CONSULTATION
+            <Button size="lg" className="group bg-secondary hover:bg-secondary-light text-white border-0 text-base px-10 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1">
+              Get a Consultation
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
             </Button>
           </div>
         </div>
       </section>
 
-
       {/* Final CTA Section */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6">
+      <section className="section-padding bg-gradient-to-br from-primary-dark via-primary to-primary-dark relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-texture-noise opacity-20" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
+        
+        <div className="container-custom text-center relative z-10">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
             Ready to Discuss Your Project?
           </h2>
-          <p className="text-lg mb-10 opacity-90 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl mb-10 text-white/80 max-w-3xl mx-auto leading-relaxed">
             Contact us for specialized service consultation tailored to your unique needs.
           </p>
-          <div className="flex justify-center">
-            <Button 
-              size="lg" 
-              variant="secondary"
-              className="text-base px-8"
-              asChild
-            >
-              <a href="#contact">
-                Get a Consultation
-              </a>
-            </Button>
-          </div>
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="text-base px-10 py-7 h-auto border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
+          >
+            Email Us
+          </Button>
         </div>
       </section>
 
