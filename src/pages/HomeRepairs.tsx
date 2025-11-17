@@ -93,14 +93,8 @@ const HomeRepairs = () => {
     name: "Ceiling Fan Installation and Repair",
     desc: "Professional installation, balancing, and repair services"
   }, {
-    name: "Circuit Breaker Troubleshooting",
-    desc: "Diagnosing and fixing electrical issues"
-  }, {
     name: "GFCI Outlet Installation",
     desc: "Safety outlet installation for wet areas"
-  }, {
-    name: "Electrical Panel Upgrades",
-    desc: "Modernizing electrical systems for increased capacity"
   }, {
     name: "Safety Inspections",
     desc: "Comprehensive electrical system evaluation"
