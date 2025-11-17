@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import homeRepairsHero from "@/assets/home-repairs-hero.jpg";
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
   const rotatingTexts = ["Home Repair", "Commercial", "Marine & RV"];
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,16 +11,10 @@ const Hero = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background with overlay */}
-      <div className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-100" style={{
-      backgroundImage: `url(${homeRepairsHero})`,
-      transform: `translateY(${scrollY * 0.5}px) scale(1.1)`
+      {/* Background with overlay */}
+      <div className="absolute inset-0 z-0 bg-cover bg-center" style={{
+      backgroundImage: `url(${homeRepairsHero})`
     }}>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 via-primary/70 to-primary-dark/85" />
         <div className="absolute inset-0 bg-texture-noise opacity-30" />
