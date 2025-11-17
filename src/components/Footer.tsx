@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -64,16 +64,6 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-semibold mb-8 text-white uppercase tracking-wider">Contact</h3>
             <div className="space-y-6">
-              <div className="flex items-start gap-4 text-white/60 group">
-                <Phone className="h-5 w-5 text-secondary-light mt-1 flex-shrink-0 transition-transform group-hover:scale-110" />
-                <div>
-                  <a href="tel:4075550123" className="hover:text-secondary-light transition-colors text-base font-medium">
-                    (407) 555-0123
-                  </a>
-                  <p className="text-sm mt-1 text-white/40">Mon-Fri: 8AM - 6PM</p>
-                  <p className="text-sm text-white/40">24/7 Emergency Service</p>
-                </div>
-              </div>
               <div className="flex items-start gap-4 text-white/60 group">
                 <Mail className="h-5 w-5 text-secondary-light mt-1 flex-shrink-0 transition-transform group-hover:scale-110" />
                 <a href="mailto:info@thevadimgroup.com" className="hover:text-secondary-light transition-colors text-base">

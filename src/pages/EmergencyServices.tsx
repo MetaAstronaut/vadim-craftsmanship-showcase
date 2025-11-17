@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, Droplets, Wrench, Zap, Home, Shield, AlertTriangle, Flame } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Droplets, Wrench, Zap, Home, Shield, AlertTriangle, Flame } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -57,10 +59,9 @@ const EmergencyServices = () => {
           <p className="text-2xl text-muted-foreground mb-10 font-medium">
             We're Here When You Need Us Most
           </p>
-          <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-white text-base px-8">
-            <Phone className="mr-2 h-5 w-5" />
-            Call Emergency: (407) 555-0123
-          </Button>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Submit your emergency request below and we'll respond immediately
+          </p>
         </div>
       </section>
 
@@ -112,23 +113,75 @@ const EmergencyServices = () => {
         </div>
       </section>
 
-      {/* Bottom CTA */}
+      {/* Emergency Request Form */}
       <section className="section-padding bg-background">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6">
-            Don't Wait — Act Now
-          </h2>
-          <p className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
-            Water damage, electrical issues, and structural problems get worse by the minute.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button size="lg" className="bg-destructive hover:bg-destructive/90 text-white text-base px-8">
-              <Phone className="mr-2 h-5 w-5" />
-              Call Emergency Line Now
-            </Button>
-            <Button size="lg" variant="outline" className="text-base px-8">
-              Save Our Number
-            </Button>
+        <div className="container-custom">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-semibold mb-6 text-center">
+              Request Emergency Service
+            </h2>
+            <p className="text-lg text-muted-foreground mb-10 text-center">
+              Fill out this form and we'll respond immediately. For life-threatening emergencies, call 911 first.
+            </p>
+            
+            <Card className="border-destructive/20">
+              <CardContent className="p-8">
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium">Full Name *</label>
+                      <Input id="name" placeholder="John Doe" required />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">Email *</label>
+                      <Input id="email" type="email" placeholder="john@example.com" required />
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="address" className="text-sm font-medium">Property Address *</label>
+                    <Input id="address" placeholder="123 Main St, Orlando, FL" required />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="emergency" className="text-sm font-medium">Type of Emergency *</label>
+                    <select 
+                      id="emergency" 
+                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      required
+                    >
+                      <option value="">Select emergency type</option>
+                      <option value="water">Water Damage & Flooding</option>
+                      <option value="pipes">Burst Pipes & Plumbing</option>
+                      <option value="electrical">Electrical Hazards</option>
+                      <option value="storm">Storm Structural Damage</option>
+                      <option value="boardup">Emergency Board-Up</option>
+                      <option value="gas">Gas Leak</option>
+                      <option value="roof">Roof Leak</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <label htmlFor="description" className="text-sm font-medium">Emergency Description *</label>
+                    <Textarea 
+                      id="description" 
+                      placeholder="Please describe the emergency situation in detail..."
+                      rows={5}
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-destructive hover:bg-destructive/90 text-white text-base"
+                  >
+                    Submit Emergency Request
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

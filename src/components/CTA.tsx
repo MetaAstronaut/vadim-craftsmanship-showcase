@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 const CTA = () => {
   return <section className="section-padding bg-background relative overflow-hidden border-t border-border">
       {/* Premium Background with Gradient */}
@@ -26,13 +26,12 @@ const CTA = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button size="lg" variant="default" className="group text-lg px-12 py-7 h-auto shadow-premium hover:shadow-2xl font-semibold">
-              <Phone className="mr-3 h-6 w-6 transition-transform group-hover:scale-110" />
-              Call (407) 555-0123
+              Get a Quote
+              <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button size="lg" variant="outline" className="group text-lg px-12 py-7 h-auto border-2 border-foreground/20 hover:border-secondary hover:bg-secondary/5 font-semibold">
               <Mail className="mr-3 h-6 w-6" />
               Email Us
-              <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-1" />
             </Button>
           </div>
 

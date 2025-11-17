@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -59,22 +59,12 @@ const Header = () => {
               ))}
             </div>
 
-            <div className="flex items-center space-x-4 pl-8 border-l border-white/10">
-              <a
-                href="tel:+14075550123"
-                className="flex items-center space-x-2 text-secondary-light hover:text-secondary transition-all duration-300 group"
-              >
-                <Phone className="h-4 w-4 transition-transform group-hover:scale-110" />
-                <span className="font-semibold tracking-wide">(407) 555-0123</span>
-              </a>
-
-              <Button 
-                size="sm" 
-                className="btn-premium bg-secondary hover:bg-secondary-light text-white border border-secondary/20 hover:border-secondary-light/30 shadow-lg hover:shadow-xl px-6"
-              >
-                Get a Quote
-              </Button>
-            </div>
+            <Button 
+              size="sm" 
+              className="btn-premium bg-secondary hover:bg-secondary-light text-white border border-secondary/20 hover:border-secondary-light/30 shadow-lg hover:shadow-xl px-6"
+            >
+              Get a Quote
+            </Button>
           </div>
 
           <button
@@ -105,14 +95,7 @@ const Header = () => {
               </Link>
             ))}
             
-            <div className="pt-4 mt-4 border-t border-white/10 space-y-4">
-              <a 
-                href="tel:+14075550123" 
-                className="flex items-center space-x-2 text-secondary-light font-semibold"
-              >
-                <Phone className="h-5 w-5" />
-                <span>(407) 555-0123</span>
-              </a>
+            <div className="pt-4 mt-4 border-t border-white/10">
               <Button size="lg" className="w-full bg-secondary hover:bg-secondary-light">
                 Get a Quote
               </Button>
