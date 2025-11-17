@@ -38,9 +38,8 @@ const Hero = () => {
             </h1>
 
             {/* Decorative line */}
-            <div className="flex items-center gap-4 py-2">
-              <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-transparent" />
-              <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+            <div className="py-2">
+              <div className="h-[2px] w-32 bg-gradient-to-r from-secondary-glow to-transparent" />
             </div>
 
             <p className="text-xl md:text-2xl font-light text-white/80 leading-relaxed max-w-2xl">
