@@ -20,7 +20,6 @@ const OtherServices = () => {
   const commercialServices = [
     { icon: Building2, name: "Office renovations and updates" },
     { icon: Building2, name: "Retail space design and build-outs" },
-    { icon: CheckCircle2, name: "ADA compliance modifications" },
     { icon: Paintbrush, name: "Commercial painting and flooring" },
     { icon: AlertCircle, name: "Emergency repair services" },
   ];
