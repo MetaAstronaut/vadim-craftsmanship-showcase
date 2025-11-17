@@ -43,8 +43,8 @@ const OtherServices = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-dark/90" />
         <div className="absolute inset-0 bg-texture-noise opacity-20" />
         
-        {/* Animated accent elements */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        {/* Decorative accent elements */}
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-32 right-1/3 w-[500px] h-[500px] bg-secondary-glow/8 rounded-full blur-[140px]" />
         
         <div className="container-custom text-center px-6 relative z-10 py-32">
@@ -194,24 +194,24 @@ const OtherServices = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-dark via-primary to-primary-dark relative overflow-hidden">
+      <section className="section-padding bg-gradient-to-br from-background via-muted/50 to-background relative overflow-hidden border-t border-border/40">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-texture-noise opacity-20" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-tertiary/5 rounded-full blur-[120px]" />
         
         <div className="container-custom text-center relative z-10">
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
             Ready to Discuss Your Project?
           </h2>
-          <p className="text-lg md:text-xl mb-10 text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl mb-10 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Contact us for specialized service consultation tailored to your unique needs.
           </p>
           <Button 
             size="lg" 
-            variant="outline" 
-            className="text-base px-10 py-7 h-auto border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
+            className="group bg-secondary hover:bg-secondary-light text-white border-0 text-base px-10 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1"
           >
             Email Us
+            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
           </Button>
         </div>
       </section>
