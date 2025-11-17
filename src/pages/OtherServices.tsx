@@ -13,8 +13,7 @@ import {
   Armchair,
   Sparkles,
   Settings,
-  CheckCircle2,
-  Phone
+  CheckCircle2
 } from "lucide-react";
 
 const OtherServices = () => {
@@ -151,21 +150,10 @@ const OtherServices = () => {
           <p className="text-lg mb-10 opacity-90 max-w-3xl mx-auto">
             Contact us for specialized service consultation tailored to your unique needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex justify-center">
             <Button 
               size="lg" 
               variant="secondary"
-              className="text-base px-8"
-              asChild
-            >
-              <a href="tel:+14075550123" className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
-                Call Us Now
-              </a>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
               className="text-base px-8"
               asChild
             >
