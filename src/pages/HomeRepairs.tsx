@@ -160,7 +160,7 @@ const HomeRepairs = () => {
         
         <div className="container-custom relative z-10 text-center">
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-[1.05]">
-            Expert Home Repairs
+            Comprehensive Home Repair Services
           </h1>
           
           {/* Decorative line */}
