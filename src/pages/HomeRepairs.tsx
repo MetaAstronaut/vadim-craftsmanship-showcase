@@ -52,9 +52,6 @@ const HomeRepairs = () => {
     name: "Siding Repair",
     desc: "Vinyl, wood, and fiber cement siding repair and replacement"
   }, {
-    name: "Roof Repairs",
-    desc: "Shingle replacement, leak repair, flashing installation, and emergency repairs"
-  }, {
     name: "Gutter Services",
     desc: "Cleaning, repair, installation, and gutter guard systems"
   }, {
