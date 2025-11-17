@@ -56,13 +56,12 @@ const CTA = () => {
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-premium-xl">
                 <h3 className="font-serif text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
                 <ul className="space-y-4">
-                  {[
-                    "Free consultations",
-                    "Transparent pricing",
-                    "Licensed & insured",
-                    "24/7 emergency service",
-                    "Satisfaction guaranteed"
-                  ].map((item, index) => (
+                {[
+                  "Free consultations",
+                  "Transparent pricing",
+                  "24/7 emergency service",
+                  "Satisfaction guaranteed"
+                ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-white/80">
                       <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
                         <CheckCircle className="h-4 w-4 text-secondary-glow" />
