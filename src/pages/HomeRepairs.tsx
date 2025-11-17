@@ -705,16 +705,6 @@ const HomeRepairs = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="licensed" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
-                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
-                  Are you licensed and insured?
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
-                    Yes, The Vadim Group is fully licensed, bonded, and insured. This protects both you and our team throughout the project. We can provide proof of insurance upon request, and we ensure all work complies with local building codes.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
 
               <AccordionItem value="size" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
                 <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
