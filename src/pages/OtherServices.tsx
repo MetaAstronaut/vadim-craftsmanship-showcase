@@ -10,7 +10,6 @@ import {
   Ship, 
   Wrench, 
   Droplet,
-  Car,
   Armchair,
   Sparkles,
   Settings,
@@ -41,14 +40,6 @@ const OtherServices = () => {
     { icon: Sparkles, name: "Cosmetic restoration" },
   ];
 
-  const automotiveServices = [
-    { icon: Car, name: "Interior restoration and repair" },
-    { icon: Armchair, name: "Leather conditioning and repair" },
-    { icon: Armchair, name: "Custom upholstery" },
-    { icon: Sparkles, name: "Detailing and paint correction" },
-    { icon: Settings, name: "Trim and dashboard restoration" },
-    { icon: Wrench, name: "Minor body work and touch-ups" },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -61,7 +52,7 @@ const OtherServices = () => {
             Specialized Services
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Professional solutions for your business, recreational vehicles, and luxury automobiles
+            Professional solutions for your business and recreational vehicles
           </p>
         </div>
       </section>
@@ -150,47 +141,6 @@ const OtherServices = () => {
         </div>
       </section>
 
-      {/* Automotive Services Section */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-secondary/10 mb-6">
-              <Car className="h-10 w-10 text-secondary" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-semibold mb-6">
-              Luxury Automotive Services
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              High-end vehicles deserve expert care. From classic car restoration to modern luxury vehicle 
-              detailing and repair, we treat your automotive investment with respect.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {automotiveServices.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Card key={index} className="p-6">
-                  <CardHeader className="p-0 mb-4">
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 text-secondary flex-shrink-0" />
-                      <CardTitle className="text-base font-medium">
-                        {service.name}
-                      </CardTitle>
-                    </div>
-                  </CardHeader>
-                </Card>
-              );
-            })}
-          </div>
-
-          <div className="text-center">
-            <Button size="lg" variant="secondary" className="px-8">
-              Get a Quote
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="section-padding bg-primary text-primary-foreground">
