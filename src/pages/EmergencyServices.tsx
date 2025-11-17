@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Droplets, Wrench, Home, Shield, AlertTriangle, Flame } from "lucide-react";
+import { Droplets, Wrench, Home, Shield, AlertTriangle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -27,11 +27,6 @@ const EmergencyServices = () => {
       icon: Shield,
       title: "Emergency Board-Up",
       description: "Secure your property after break-ins or damage"
-    },
-    {
-      icon: Flame,
-      title: "Gas Leak Coordination",
-      description: "Fast response and utility company coordination"
     }
   ];
 
