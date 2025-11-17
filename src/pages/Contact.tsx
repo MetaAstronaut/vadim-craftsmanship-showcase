@@ -71,24 +71,43 @@ const Contact = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-background">
-        <div className="container-custom text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-dark/90" />
+        <div className="absolute inset-0 bg-texture-noise opacity-20" />
+        
+        {/* Animated accent elements */}
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute bottom-32 right-1/3 w-[400px] h-[400px] bg-secondary-glow/8 rounded-full blur-[140px]" />
+        
+        <div className="container-custom text-center px-4 py-32 relative z-10">
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-white tracking-tight leading-[1.05]">
             Get in Touch
           </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          
+          {/* Decorative line */}
+          <div className="flex items-center gap-4 py-2 justify-center mb-6">
+            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+            <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+          </div>
+          
+          <p className="text-xl md:text-2xl text-white/85 max-w-3xl mx-auto font-light leading-relaxed">
             Ready to transform your space? Contact us today for a free consultation and quote.
           </p>
         </div>
       </section>
 
       {/* Two Column Layout */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
+      <section className="py-24 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        
+        <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             {/* Left Column - Contact Form */}
-            <div className="bg-card border p-8">
-              <h2 className="text-3xl font-semibold mb-8">Request a Free Quote</h2>
+            <div className="bg-card/50 backdrop-blur-sm border-2 border-border/50 p-10 shadow-premium">
+              <h2 className="font-serif text-4xl font-bold mb-8 tracking-tight">Request a Free Quote</h2>
               
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name */}
@@ -175,7 +194,7 @@ const Contact = () => {
                 </div>
 
                 {/* Submit Button */}
-                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" size="lg" className="w-full group bg-secondary hover:bg-secondary-light text-white border-0 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
 
@@ -194,7 +213,7 @@ const Contact = () => {
             {/* Right Column - Contact Information */}
             <div className="space-y-10">
               <div>
-                <h2 className="text-3xl font-semibold mb-8">Let's Connect</h2>
+                <h2 className="font-serif text-4xl font-bold mb-8 tracking-tight">Let's Connect</h2>
               </div>
 
               {/* Email */}

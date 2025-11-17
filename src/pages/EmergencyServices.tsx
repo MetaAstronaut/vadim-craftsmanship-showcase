@@ -50,25 +50,42 @@ const EmergencyServices = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-destructive/10 to-background">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-10" />
-        <div className="container-custom relative z-10 text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6">
-            <span className="text-destructive">24/7</span> Emergency Repair Services
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-br from-destructive/40 via-primary-dark/85 to-primary-dark/90" />
+        <div className="absolute inset-0 bg-texture-noise opacity-20" />
+        
+        {/* Animated accent elements */}
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-destructive/10 rounded-full blur-[120px] animate-pulse" />
+        
+        <div className="container-custom relative z-10 text-center px-4 py-32">
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-white tracking-tight leading-[1.05]">
+            <span className="text-secondary-glow">24/7</span> Emergency Repair Services
           </h1>
-          <p className="text-2xl text-muted-foreground mb-10 font-medium">
+          
+          {/* Decorative line */}
+          <div className="flex items-center gap-4 py-2 justify-center mb-6">
+            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+            <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+          </div>
+          
+          <p className="text-2xl text-white/90 mb-8 font-light">
             We're Here When You Need Us Most
           </p>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto font-light leading-relaxed">
             Submit your emergency request below and we'll respond immediately
           </p>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <p className="text-lg text-center max-w-4xl mx-auto text-muted-foreground">
+      <section className="py-24 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        
+        <div className="container-custom relative z-10">
+          <p className="text-xl text-center max-w-4xl mx-auto text-muted-foreground font-light leading-relaxed">
             Home emergencies don't wait for convenient times. That's why The Vadim Group offers rapid-response 
             emergency repair services for critical issues that can't wait.
           </p>
@@ -76,18 +93,21 @@ const EmergencyServices = () => {
       </section>
 
       {/* Emergency Services Grid */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16">
+      <section className="py-24 bg-muted/30 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        
+        <div className="container-custom relative z-10">
+          <h2 className="font-serif text-5xl md:text-6xl font-bold text-center mb-20 tracking-tight">
             Emergency Services We Handle
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {emergencyServices.map((service, index) => (
-              <Card key={index} className="border border-destructive/20 hover:border-destructive/40 transition-all p-6">
+              <Card key={index} className="group border-2 border-destructive/30 hover:border-destructive/60 transition-all duration-300 p-8 hover:shadow-premium bg-card/50 backdrop-blur-sm">
                 <CardContent className="p-0">
-                  <service.icon className="h-12 w-12 text-destructive mb-6" />
-                  <h3 className="text-xl font-medium mb-3">{service.title}</h3>
-                  <p className="text-base text-muted-foreground">{service.description}</p>
+                  <service.icon className="h-12 w-12 text-destructive mb-6 group-hover:scale-110 transition-transform duration-300" />
+                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-base text-muted-foreground font-light leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
