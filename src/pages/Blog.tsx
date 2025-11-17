@@ -134,71 +134,83 @@ const Blog = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-background">
-          <div className="container-custom text-center px-4">
-            <h1 className="text-5xl md:text-6xl font-semibold mb-6">Insights & Tips</h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Expert advice on home maintenance, repairs, and improvements
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+          {/* Background with gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/85 to-primary-dark/90" />
+          <div className="absolute inset-0 bg-texture-noise opacity-20" />
+          
+          {/* Animated accent elements */}
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute bottom-32 right-1/3 w-[400px] h-[400px] bg-secondary-glow/8 rounded-full blur-[140px]" />
+          
+          <div className="container-custom text-center px-4 py-32 relative z-10">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold mb-6 text-white tracking-tight leading-[1.05]">
+              Blog & Resources
+            </h1>
+            
+            {/* Decorative line */}
+            <div className="flex items-center gap-4 py-2 justify-center mb-6">
+              <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+              <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+              <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+            </div>
+            
+            <p className="text-xl md:text-2xl text-white/85 max-w-3xl mx-auto font-light leading-relaxed">
+              Expert tips, guides, and insights to help you maintain and improve your property
             </p>
           </div>
         </section>
 
-        {/* Category Filter */}
-        <section className="py-12 border-b bg-muted/30">
-          <div className="container-custom">
-            <div className="flex flex-wrap gap-3 justify-center">
+        {/* Category Filter & Blog Grid */}
+        <section className="py-24 bg-background relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+          
+          <div className="container-custom relative z-10">
+            {/* Category Filter */}
+            <div className="flex flex-wrap gap-3 justify-center mb-20">
               {categories.map((category) => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className="transition-all"
+                  className="px-6 py-2.5 text-sm font-medium hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   {category}
                 </Button>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Blog Grid */}
-        <section className="section-padding bg-background">
-          <div className="container-custom">
+            {/* Blog Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArticles.map((article) => (
                 <Card 
                   key={article.id} 
-                  className="group relative overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  className="group overflow-hidden hover:shadow-premium transition-all duration-300 hover:-translate-y-2 cursor-pointer border-2 border-border/50 hover:border-secondary/50 bg-card/50 backdrop-blur-sm"
                 >
-                  <div className="relative h-48 overflow-hidden bg-muted">
+                  <div className="relative h-56 overflow-hidden bg-muted">
                     <img 
                       src={article.image} 
                       alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
-                    <Badge className="absolute top-4 right-4 bg-background/95 backdrop-blur">
-                      Coming Soon
-                    </Badge>
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                  
                   <CardHeader>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Badge variant="outline" className={getCategoryColor(article.category)}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <Badge variant="secondary" className="text-xs font-medium">
                         {article.category}
                       </Badge>
-                      <span className="text-sm text-muted-foreground flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
+                      <div className="flex items-center text-xs text-muted-foreground">
+                        <Clock className="w-3 h-3 mr-1" />
                         {article.readingTime}
-                      </span>
+                      </div>
                     </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                    <CardTitle className="text-xl leading-snug group-hover:text-secondary transition-colors font-semibold">
                       {article.title}
                     </CardTitle>
                   </CardHeader>
-                  
                   <CardContent>
-                    <CardDescription className="line-clamp-3">
+                    <CardDescription className="text-base leading-relaxed font-light">
                       {article.description}
                     </CardDescription>
                   </CardContent>

@@ -148,30 +148,45 @@ const HomeRepairs = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden py-[120px]">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden py-32">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Home Repair Services" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/75" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary/80 to-primary-dark/85" />
+          <div className="absolute inset-0 bg-texture-noise opacity-20" />
         </div>
+        
+        {/* Animated accent elements */}
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        
         <div className="container-custom relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-semibold text-white mb-6">
-            Comprehensive Home Repair Services
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-[1.05]">
+            Expert Home Repairs
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Your Trusted Partner for Every Home Repair Need
+          
+          {/* Decorative line */}
+          <div className="flex items-center gap-4 py-2 justify-center mb-6">
+            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+            <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+          </div>
+          
+          <p className="text-xl md:text-2xl text-white/85 max-w-3xl mx-auto font-light leading-relaxed">
+            Quality repairs that protect your investment and improve your daily life
           </p>
         </div>
       </section>
 
       {/* Intro Section */}
-      <section className="py-[100px] bg-background">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <Info className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-semibold">Why Choose Us</h2>
-            </div>
-            <p className="text-xl text-foreground/90 leading-[1.7]">
+      <section className="py-24 bg-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="font-serif text-5xl md:text-6xl font-bold text-foreground tracking-tight">
+              Why Choose Us
+            </h2>
+            <p className="text-xl text-muted-foreground leading-relaxed font-light">
               At The Vadim Group, we understand that your home is your sanctuary. Whether you need a quick fix or a complete renovation, our experienced team handles every project with the same level of care and professionalism.
             </p>
           </div>
@@ -179,21 +194,17 @@ const HomeRepairs = () => {
       </section>
 
       {/* Service Categories */}
-      <section className="py-[100px] bg-muted/30 relative overflow-hidden">
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl" />
-        </div>
+      <section className="py-24 bg-muted/30 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
         
         <div className="container-custom relative z-10">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Hammer className="h-10 w-10 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-bold text-center">Common Home Repairs We Handle</h2>
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-5xl md:text-6xl font-bold mb-6 tracking-tight">Common Home Repairs We Handle</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-light">
+              From minor fixes to major renovations, we provide comprehensive repair services for every part of your home.
+            </p>
           </div>
-          <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-[1.7]">
-            From minor fixes to major renovations, we provide comprehensive repair services for every part of your home.
-          </p>
           
           <div className="max-w-5xl mx-auto">
             <Accordion type="single" collapsible className="space-y-6">
