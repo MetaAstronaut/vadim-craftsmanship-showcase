@@ -140,7 +140,7 @@ const Blog = () => {
           <div className="absolute inset-0 bg-texture-noise opacity-20" />
           
           {/* Animated accent elements */}
-          <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+          <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
           <div className="absolute bottom-32 right-1/3 w-[400px] h-[400px] bg-secondary-glow/8 rounded-full blur-[140px]" />
           
           <div className="container-custom text-center px-4 py-32 relative z-10">
@@ -162,19 +162,35 @@ const Blog = () => {
         </section>
 
         {/* Category Filter & Blog Grid */}
-        <section className="py-24 bg-background relative overflow-hidden">
+        <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-glow/5 rounded-full blur-[100px]" />
           
           <div className="container-custom relative z-10">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <div className="flex items-center gap-4 mb-2 justify-center">
+                <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+                <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+                <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 tracking-tight">Explore Our Articles</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Filter by category to find exactly what you need</p>
+            </div>
+            
             {/* Category Filter */}
-            <div className="flex flex-wrap gap-3 justify-center mb-20">
+            <div className="flex flex-wrap gap-3 justify-center mb-16">
               {categories.map((category) => (
                 <Button
                   key={category}
                   variant={selectedCategory === category ? "default" : "outline"}
                   onClick={() => setSelectedCategory(category)}
-                  className="px-6 py-2.5 text-sm font-medium hover:scale-105 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className={`px-6 py-3 text-sm font-medium transition-all duration-300 ${
+                    selectedCategory === category 
+                      ? "bg-secondary hover:bg-secondary-light text-white border-0 shadow-premium-lg hover:shadow-premium-xl" 
+                      : "border-2 border-card-border hover:border-secondary/40 hover:bg-card/50 shadow-md hover:shadow-premium-lg"
+                  } hover:-translate-y-1`}
                 >
                   {category}
                 </Button>
@@ -185,7 +201,7 @@ const Blog = () => {
               {filteredArticles.map((article) => (
                 <Card 
                   key={article.id} 
-                  className="group overflow-hidden hover:shadow-premium transition-all duration-300 hover:-translate-y-2 cursor-pointer border-2 border-border/50 hover:border-secondary/50 bg-card/50 backdrop-blur-sm"
+                  className="group overflow-hidden transition-all duration-300 hover:-translate-y-2 cursor-pointer border-2 border-card-border hover:border-secondary/40 bg-card/50 backdrop-blur-sm shadow-premium-lg hover:shadow-premium-xl"
                 >
                   <div className="relative h-56 overflow-hidden bg-muted">
                     <img 
@@ -194,14 +210,20 @@ const Blog = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Decorative corner accent */}
+                    <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute top-0 right-0 w-full h-[2px] bg-gradient-to-l from-secondary to-transparent" />
+                      <div className="absolute top-0 right-0 w-[2px] h-full bg-gradient-to-b from-secondary to-transparent" />
+                    </div>
                   </div>
-                  <CardHeader>
+                  <CardHeader className="pb-4">
                     <div className="flex items-center gap-3 mb-3">
-                      <Badge variant="secondary" className="text-xs font-medium">
+                      <Badge variant="secondary" className="text-xs font-medium px-3 py-1">
                         {article.category}
                       </Badge>
                       <div className="flex items-center text-xs text-muted-foreground">
-                        <Clock className="w-3 h-3 mr-1" />
+                        <Clock className="w-3.5 h-3.5 mr-1.5" />
                         {article.readingTime}
                       </div>
                     </div>
@@ -210,7 +232,7 @@ const Blog = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base leading-relaxed font-light">
+                    <CardDescription className="text-base leading-relaxed">
                       {article.description}
                     </CardDescription>
                   </CardContent>
