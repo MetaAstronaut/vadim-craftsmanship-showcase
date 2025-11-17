@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Droplets, Wrench, Zap, Home, Shield, AlertTriangle, Flame } from "lucide-react";
+import { Droplets, Wrench, Home, Shield, AlertTriangle, Flame } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -17,11 +17,6 @@ const EmergencyServices = () => {
       icon: Wrench,
       title: "Burst Pipes & Plumbing",
       description: "Emergency plumbing repairs to stop water damage"
-    },
-    {
-      icon: Zap,
-      title: "Electrical Hazards",
-      description: "Critical electrical issues and power restoration"
     },
     {
       icon: Home,
