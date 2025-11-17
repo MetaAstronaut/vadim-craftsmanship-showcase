@@ -16,29 +16,29 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Debbie Riley",
-      initials: "DR",
+      name: "Sarah M.",
+      initials: "SM",
       avatar: null,
-      text: "We purchased a home in Davenport 3-1-24 and it needed a lot of work. I had to go and get some samples of flooring and I was lucky enough to meet Vadim. He gave me his card and I'm so glad he did. Everything he has done for us has been outstanding. Fair pricing, impeccable work and so pleasant to deal with.",
-      date: "2024-04-16",
+      text: "Vadim and his team transformed our dated kitchen into a modern masterpiece. The attention to detail was incredible, and they stayed on budget and on schedule. Highly recommend!",
+      date: "2024-03-15",
       rating: 5,
       color: "bg-orange-500",
     },
     {
-      name: "Maricela Vergara",
-      initials: "MV",
+      name: "Robert L.",
+      initials: "RL",
       avatar: null,
-      text: "Good prices and good services.",
-      date: "2024-02-23",
+      text: "After storm damage left our roof leaking, The Vadim Group responded immediately. They not only fixed the emergency but identified other potential issues we hadn't noticed. True professionals.",
+      date: "2024-02-28",
       rating: 5,
       color: "bg-red-500",
     },
     {
-      name: "Mike Renard",
-      initials: "MR",
+      name: "Jennifer K.",
+      initials: "JK",
       avatar: null,
-      text: "Another satisfied customer. We had carpet removed and tile installed. We received excellent advise on the proper tile to pick and found the workmanship to be outstanding. The crew was polite and professional. We highly recommend The Vadim Group for any home improvement project.",
-      date: "2024-02-08",
+      text: "I've used The Vadim Group for everything from minor repairs to a complete office renovation. Consistent quality, fair pricing, and great communication every time.",
+      date: "2024-01-20",
       rating: 5,
       color: "bg-teal-500",
     },
@@ -69,7 +69,7 @@ const Testimonials = () => {
               >
                 <CardContent className="p-0">
                   {/* Google Icon */}
-                  <div className="absolute top-6 right-6">
+                  <div className="absolute top-6 right-6 opacity-100">
                     <GoogleIcon />
                   </div>
 
