@@ -45,12 +45,19 @@ const OtherServices = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-primary/5 to-background">
-        <div className="container-custom text-center px-4">
-          <h1 className="text-5xl md:text-6xl font-semibold mb-6">
+      <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-br from-primary via-primary/90 to-primary/80 overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.08),transparent_50%)]" />
+        
+        {/* Overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/10" />
+        
+        <div className="container-custom text-center px-4 relative z-10 py-24">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-primary-foreground">
             Specialized Services
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
             Professional solutions for your business and recreational vehicles
           </p>
         </div>
