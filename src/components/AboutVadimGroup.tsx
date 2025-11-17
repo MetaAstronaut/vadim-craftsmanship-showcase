@@ -1,4 +1,4 @@
-import { CheckCircle, Home, Building2, Ship, Car, ClipboardList, AlertCircle, Calendar } from "lucide-react";
+import { CheckCircle, Home, Building2, Ship, ClipboardList, AlertCircle, Calendar } from "lucide-react";
 import vadimPortrait from "@/assets/vadim-portrait.jpg";
 
 const AboutVadimGroup = () => {
@@ -13,7 +13,6 @@ const AboutVadimGroup = () => {
     { icon: Home, text: "Home renovations and custom builds" },
     { icon: Building2, text: "Business and commercial remodeling" },
     { icon: Ship, text: "Boat and RV maintenance and redesign" },
-    { icon: Car, text: "Luxury car restoration and detailing" },
     { icon: ClipboardList, text: "Full-service project management" },
     { icon: AlertCircle, text: "Emergency repair services" },
     { icon: Calendar, text: "Preventative maintenance programs" },

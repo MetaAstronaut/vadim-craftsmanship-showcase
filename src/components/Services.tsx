@@ -1,4 +1,4 @@
-import { Home, Building2, Anchor, Car } from "lucide-react";
+import { Home, Building2, Anchor } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Services = () => {
@@ -21,12 +21,6 @@ const Services = () => {
       description:
         "Specialized repairs for boats and RVs. Expert care for your recreational vehicles and watercraft.",
     },
-    {
-      icon: Car,
-      title: "Automotive Services",
-      description:
-        "High-end car repair and maintenance. Premium service for luxury and specialty vehicles.",
-    },
   ];
 
   return (
@@ -43,7 +37,7 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card
               key={service.title}
