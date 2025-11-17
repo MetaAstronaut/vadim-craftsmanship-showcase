@@ -76,7 +76,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-texture-noise opacity-20" />
         
         {/* Animated accent elements */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] animate-pulse" />
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-32 right-1/3 w-[400px] h-[400px] bg-secondary-glow/8 rounded-full blur-[140px]" />
         
         <div className="container-custom text-center px-4 py-32 relative z-10">
@@ -117,7 +117,7 @@ const Contact = () => {
                     id="name"
                     {...register("name")}
                     placeholder="Your full name"
-                    className={errors.name ? "border-destructive" : ""}
+                    className={`border-2 focus:border-secondary transition-colors ${errors.name ? "border-destructive" : ""}`}
                   />
                   {errors.name && (
                     <p className="text-sm text-destructive">{errors.name.message}</p>
@@ -132,7 +132,7 @@ const Contact = () => {
                     type="email"
                     {...register("email")}
                     placeholder="your.email@example.com"
-                    className={errors.email ? "border-destructive" : ""}
+                    className={`border-2 focus:border-secondary transition-colors ${errors.email ? "border-destructive" : ""}`}
                   />
                   {errors.email && (
                     <p className="text-sm text-destructive">{errors.email.message}</p>
@@ -147,7 +147,7 @@ const Contact = () => {
                     type="tel"
                     {...register("phone")}
                     placeholder="(407) 555-0123"
-                    className={errors.phone ? "border-destructive" : ""}
+                    className={`border-2 focus:border-secondary transition-colors ${errors.phone ? "border-destructive" : ""}`}
                   />
                   {errors.phone && (
                     <p className="text-sm text-destructive">{errors.phone.message}</p>
@@ -161,7 +161,7 @@ const Contact = () => {
                     value={serviceType}
                     onValueChange={(value) => setValue("serviceType", value)}
                   >
-                    <SelectTrigger className={errors.serviceType ? "border-destructive" : ""}>
+                    <SelectTrigger className={`border-2 focus:border-secondary transition-colors ${errors.serviceType ? "border-destructive" : ""}`}>
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -186,7 +186,7 @@ const Contact = () => {
                     {...register("message")}
                     placeholder="Tell us about your project..."
                     rows={5}
-                    className={errors.message ? "border-destructive" : ""}
+                    className={`border-2 focus:border-secondary transition-colors ${errors.message ? "border-destructive" : ""}`}
                   />
                   {errors.message && (
                     <p className="text-sm text-destructive">{errors.message.message}</p>
@@ -213,26 +213,33 @@ const Contact = () => {
             {/* Right Column - Contact Information */}
             <div className="space-y-10">
               <div>
-                <h2 className="font-serif text-4xl font-bold mb-8 tracking-tight">Let's Connect</h2>
+                <div className="flex items-center gap-4 mb-2">
+                  <div className="h-[2px] w-12 bg-gradient-to-r from-secondary to-secondary-glow" />
+                </div>
+                <h2 className="font-serif text-4xl md:text-5xl font-bold mb-8 tracking-tight">Let's Connect</h2>
               </div>
 
               {/* Email */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Mail className="h-6 w-6 text-primary mt-1" />
+              <div className="space-y-3 bg-card/30 backdrop-blur-sm border-2 border-card-border rounded-xl p-6 hover:shadow-premium-lg transition-all duration-300 hover:border-secondary/40">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-secondary/10 rounded-lg">
+                    <Mail className="h-6 w-6 text-secondary" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Email</h3>
+                    <h3 className="font-semibold text-lg mb-2">Email</h3>
                     <p className="text-muted-foreground">info@thevadimgroup.com</p>
                   </div>
                 </div>
               </div>
 
               {/* Business Hours */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Clock className="h-6 w-6 text-primary mt-1" />
+              <div className="space-y-3 bg-card/30 backdrop-blur-sm border-2 border-card-border rounded-xl p-6 hover:shadow-premium-lg transition-all duration-300 hover:border-secondary/40">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-secondary/10 rounded-lg">
+                    <Clock className="h-6 w-6 text-secondary" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Business Hours</h3>
+                    <h3 className="font-semibold text-lg mb-2">Business Hours</h3>
                     <p className="text-muted-foreground">Monday - Friday: 8:00 AM - 6:00 PM</p>
                     <p className="text-muted-foreground">Saturday: 9:00 AM - 4:00 PM</p>
                     <p className="text-muted-foreground">Sunday: Emergency Services Only</p>
@@ -241,11 +248,13 @@ const Contact = () => {
               </div>
 
               {/* Service Area */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-6 w-6 text-primary mt-1" />
+              <div className="space-y-3 bg-card/30 backdrop-blur-sm border-2 border-card-border rounded-xl p-6 hover:shadow-premium-lg transition-all duration-300 hover:border-secondary/40">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-secondary/10 rounded-lg">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                  </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Service Area</h3>
+                    <h3 className="font-semibold text-lg mb-2">Service Area</h3>
                     <p className="text-muted-foreground">
                       We proudly serve Orlando and surrounding areas within a 50-mile radius.
                       Contact us to confirm service availability in your location.
@@ -255,8 +264,8 @@ const Contact = () => {
               </div>
 
               {/* Response Time */}
-              <div className="bg-primary/5 border border-primary/20 rounded-lg p-6">
-                <h3 className="font-semibold mb-2">Response Time</h3>
+              <div className="bg-gradient-to-br from-secondary/10 via-secondary/5 to-transparent border-2 border-secondary/30 rounded-xl p-6 shadow-premium-lg">
+                <h3 className="font-semibold text-lg mb-2">Response Time</h3>
                 <p className="text-muted-foreground">
                   We typically respond to all inquiries within 2-4 business hours during regular
                   business days.
@@ -268,10 +277,19 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
+      <section className="section-padding bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
+        
+        <div className="container-custom relative z-10">
           <div className="max-w-5xl mx-auto">
-            <div className="border overflow-hidden mb-8">
+            <div className="flex items-center gap-4 mb-2 justify-center">
+              <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+              <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+              <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+            </div>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-12 tracking-tight">Our Location</h2>
+            
+            <div className="border-2 border-card-border rounded-2xl overflow-hidden shadow-premium-lg mb-8">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448193.95102373245!2d-81.81330678125!3d28.538336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e773d8fecdbc77%3A0xac3b2063ca5bf9e!2sOrlando%2C%20FL!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus"
                 width="100%"
@@ -283,22 +301,61 @@ const Contact = () => {
                 title="Orlando, FL Service Area Map"
               />
             </div>
-            <p className="text-center text-lg font-medium">
-              Mobile service - we come to you!
-            </p>
+            <div className="text-center text-muted-foreground bg-card/30 backdrop-blur-sm border-2 border-card-border rounded-xl p-6">
+              <p className="mb-2 text-lg">📍 Serving Orlando, FL and surrounding areas</p>
+              <p className="text-sm">50-mile service radius • Contact us to confirm your location</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Factors */}
+      <section className="section-padding bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary-glow/5 rounded-full blur-[100px]" />
+        
+        <div className="container-custom relative z-10">
+          <div className="flex items-center gap-4 mb-2 justify-center">
+            <div className="h-[1px] w-24 bg-gradient-to-r from-transparent to-secondary/40" />
+            <div className="h-[2px] w-16 bg-gradient-to-r from-secondary-glow to-secondary" />
+            <div className="h-[1px] w-24 bg-gradient-to-r from-secondary/40 to-transparent" />
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">Why Choose The Vadim Group?</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-8 bg-card/50 backdrop-blur-sm border-2 border-card-border rounded-2xl shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 group">
+              <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-110">✓</div>
+              <h3 className="font-semibold text-lg mb-3">Free Consultations</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">No-obligation quotes for all services</p>
+            </div>
+            <div className="text-center p-8 bg-card/50 backdrop-blur-sm border-2 border-card-border rounded-2xl shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 group">
+              <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-110">⭐</div>
+              <h3 className="font-semibold text-lg mb-3">5-Star Service</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">Consistently rated excellent by our clients</p>
+            </div>
+            <div className="text-center p-8 bg-card/50 backdrop-blur-sm border-2 border-card-border rounded-2xl shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 group">
+              <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-110">🛡️</div>
+              <h3 className="font-semibold text-lg mb-3">Quality Guaranteed</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">Warranty on all workmanship</p>
+            </div>
+            <div className="text-center p-8 bg-card/50 backdrop-blur-sm border-2 border-card-border rounded-2xl shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-2 hover:border-secondary/40 group">
+              <div className="text-5xl mb-6 transition-transform duration-300 group-hover:scale-110">⚡</div>
+              <h3 className="font-semibold text-lg mb-3">Fast Response</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">Quick turnaround on all projects</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Secondary CTA */}
-      <section className="py-12 bg-background">
-        <div className="container px-4 text-center">
-          <p className="text-lg text-muted-foreground mb-4">Ready to get started?</p>
+      <section className="section-padding bg-gradient-to-b from-background to-muted/30 border-t border-border/40">
+        <div className="container-custom text-center">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6 font-light">Ready to get started?</p>
           <Button 
             size="lg" 
             onClick={() => {
               document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }}
+            className="bg-secondary hover:bg-secondary-light text-white border-0 shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1 group"
           >
             REQUEST A QUOTE
           </Button>
