@@ -149,7 +149,6 @@ const Contact = () => {
                       <SelectItem value="home-repairs">Home Repairs</SelectItem>
                       <SelectItem value="commercial">Commercial Services</SelectItem>
                       <SelectItem value="marine-rv">Marine & RV Services</SelectItem>
-                      <SelectItem value="automotive">Automotive Services</SelectItem>
                       <SelectItem value="emergency">Emergency Service</SelectItem>
                       <SelectItem value="general">General Inquiry</SelectItem>
                     </SelectContent>
