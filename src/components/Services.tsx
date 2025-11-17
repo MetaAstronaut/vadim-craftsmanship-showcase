@@ -1,33 +1,23 @@
 import { Home, Building2, Anchor } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
 const Services = () => {
-  const services = [
-    {
-      icon: Home,
-      title: "Home Repairs",
-      description:
-        "Complete residential repair services from minor fixes to major renovations. Your home deserves the best care.",
-      accent: "from-secondary/20 to-secondary/5",
-    },
-    {
-      icon: Building2,
-      title: "Commercial Services",
-      description:
-        "Professional commercial space maintenance and repairs. Keep your business running smoothly with minimal downtime.",
-      accent: "from-tertiary/20 to-tertiary/5",
-    },
-    {
-      icon: Anchor,
-      title: "Marine & RV Services",
-      description:
-        "Specialized repairs for boats and RVs. Expert care for your recreational vehicles and watercraft.",
-      accent: "from-secondary-light/20 to-secondary-light/5",
-    },
-  ];
-
-  return (
-    <section className="section-padding bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
+  const services = [{
+    icon: Home,
+    title: "Home Repairs",
+    description: "Complete residential repair services from minor fixes to major renovations. Your home deserves the best care.",
+    accent: "from-secondary/20 to-secondary/5"
+  }, {
+    icon: Building2,
+    title: "Commercial Services",
+    description: "Professional commercial space maintenance and repairs. Keep your business running smoothly with minimal downtime.",
+    accent: "from-tertiary/20 to-tertiary/5"
+  }, {
+    icon: Anchor,
+    title: "Marine & RV Services",
+    description: "Specialized repairs for boats and RVs. Expert care for your recreational vehicles and watercraft.",
+    accent: "from-secondary-light/20 to-secondary-light/5"
+  }];
+  return <section className="section-padding bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-[100px]" />
       <div className="absolute bottom-32 left-0 w-[500px] h-[500px] bg-tertiary/5 rounded-full blur-[120px]" />
@@ -43,18 +33,15 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl leading-relaxed">
-            Comprehensive repair solutions delivered with precision, expertise, and genuine care for your property
+            Comprehensive repair solutions delivered with precision and care
           </p>
         </div>
 
         {/* Services grid - staggered layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
-          {services.map((service, index) => (
-            <div
-              key={service.title}
-              className={`group relative ${index === 1 ? 'lg:mt-12' : ''}`}
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
+          {services.map((service, index) => <div key={service.title} className={`group relative ${index === 1 ? 'lg:mt-12' : ''}`} style={{
+          animationDelay: `${index * 150}ms`
+        }}>
               {/* Card with premium styling */}
               <div className="relative h-full bg-card border-2 border-card-border hover:border-secondary/40 rounded-2xl p-10 transition-all duration-500 hover:shadow-premium-lg hover:-translate-y-2">
                 {/* Decorative corner accent */}
@@ -86,8 +73,7 @@ const Services = () => {
                   <div className="w-8 h-[2px] bg-secondary group-hover/link:w-12 transition-all duration-300" />
                 </div>
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
 
         {/* Bottom CTA section */}
@@ -101,8 +87,6 @@ const Services = () => {
           </button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Services;
