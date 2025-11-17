@@ -50,7 +50,9 @@ const Hero = () => {
               Services
             </p>
             
-            
+            <p className="text-lg md:text-xl text-white/70 leading-relaxed max-w-2xl">
+              Serving Orlando's most discerning clients with unparalleled craftsmanship
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-5 pt-4">
               <Button size="lg" className="group bg-secondary hover:bg-secondary-light text-white border-0 text-base px-10 py-7 h-auto shadow-premium-lg hover:shadow-premium-xl transition-all duration-300 hover:-translate-y-1">
