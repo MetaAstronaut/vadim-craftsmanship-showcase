@@ -171,7 +171,7 @@ const HomeRepairs = () => {
           </div>
           
           <p className="text-xl md:text-2xl text-white/85 max-w-3xl mx-auto font-light leading-relaxed">
-            Quality repairs that protect your investment and improve your daily life
+            Your Trusted Partner for Every Home Repair Need
           </p>
         </div>
       </section>
