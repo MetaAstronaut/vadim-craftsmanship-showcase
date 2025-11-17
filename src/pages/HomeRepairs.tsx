@@ -15,17 +15,17 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 const HomeRepairs = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     toast({
       title: "Request Received",
-      description: "We'll get back to you within 24 hours.",
+      description: "We'll get back to you within 24 hours."
     });
     setIsContactOpen(false);
   };
-
   const interiorServices = [{
     name: "Drywall Repair & Installation",
     desc: "Fixing holes, cracks, water damage, and texture matching"
@@ -519,7 +519,7 @@ const HomeRepairs = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground">Licensed professionals with years of specialized experience</span>
+                  <span className="text-foreground">Professionals with years of specialized experience</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -782,12 +782,7 @@ const HomeRepairs = () => {
               Contact us today for a free estimate and let us restore your home to perfection.
             </p>
             <div className="pt-4">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="text-lg px-12 py-7 h-auto font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                onClick={() => setIsContactOpen(true)}
-              >
+              <Button size="lg" variant="secondary" className="text-lg px-12 py-7 h-auto font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl" onClick={() => setIsContactOpen(true)}>
                 <MessageSquare className="h-6 w-6 mr-3" />
                 REQUEST FREE ESTIMATE
               </Button>
