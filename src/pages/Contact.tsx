@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
 import {
   Select,
   SelectContent,
@@ -16,7 +16,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Phone, Mail, Clock, MapPin, CheckCircle2 } from "lucide-react";
+import { Mail, Clock, MapPin, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactSchema = z.object({
@@ -24,7 +24,6 @@ const contactSchema = z.object({
   email: z.string().trim().email("Invalid email address").max(255),
   phone: z.string().trim().min(1, "Phone is required").max(20),
   serviceType: z.string().min(1, "Please select a service type"),
-  contactMethod: z.enum(["phone", "email"]),
   message: z.string().trim().min(1, "Message is required").max(1000),
 });
 
@@ -43,12 +42,8 @@ const Contact = () => {
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    defaultValues: {
-      contactMethod: "phone",
-    },
   });
 
-  const contactMethod = watch("contactMethod");
   const serviceType = watch("serviceType");
 
   const onSubmit = async (data: ContactFormData) => {
@@ -164,28 +159,6 @@ const Contact = () => {
                   )}
                 </div>
 
-                {/* Preferred Contact Method */}
-                <div className="space-y-3">
-                  <Label>Preferred Contact Method</Label>
-                  <RadioGroup
-                    value={contactMethod}
-                    onValueChange={(value) => setValue("contactMethod", value as "phone" | "email")}
-                    className="flex gap-4"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="phone" id="phone-contact" />
-                      <Label htmlFor="phone-contact" className="cursor-pointer font-normal">
-                        Phone
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="email" id="email-contact" />
-                      <Label htmlFor="email-contact" className="cursor-pointer font-normal">
-                        Email
-                      </Label>
-                    </div>
-                  </RadioGroup>
-                </div>
 
                 {/* Message */}
                 <div className="space-y-2">
@@ -223,18 +196,6 @@ const Contact = () => {
             <div className="space-y-10">
               <div>
                 <h2 className="text-3xl font-semibold mb-8">Let's Connect</h2>
-              </div>
-
-              {/* Phone */}
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <Phone className="h-6 w-6 text-primary mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-2">Phone</h3>
-                    <p className="text-muted-foreground">Main: (407) 555-0123</p>
-                    <p className="text-muted-foreground">Emergency: (407) 555-0124</p>
-                  </div>
-                </div>
               </div>
 
               {/* Email */}
@@ -314,10 +275,14 @@ const Contact = () => {
       {/* Secondary CTA */}
       <section className="py-12 bg-background">
         <div className="container px-4 text-center">
-          <p className="text-lg text-muted-foreground mb-4">Prefer to talk?</p>
-          <Button size="lg" variant="outline">
-            <Phone className="mr-2 h-5 w-5" />
-            Call us directly at (407) 555-0123
+          <p className="text-lg text-muted-foreground mb-4">Ready to get started?</p>
+          <Button 
+            size="lg" 
+            onClick={() => {
+              document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }}
+          >
+            REQUEST A QUOTE
           </Button>
         </div>
       </section>
