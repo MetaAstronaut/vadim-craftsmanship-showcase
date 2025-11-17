@@ -37,11 +37,6 @@ const EmergencyServices = () => {
       icon: Flame,
       title: "Gas Leak Coordination",
       description: "Fast response and utility company coordination"
-    },
-    {
-      icon: AlertTriangle,
-      title: "Roof Leak Repairs",
-      description: "Emergency tarping and temporary roof repairs"
     }
   ];
 
