@@ -1,13 +1,31 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTA from "@/components/CTA";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import heroImage from "@/assets/home-repairs-hero.jpg";
-import { CheckCircle2, Phone, MessageSquare, ClipboardCheck, FileText, Calendar, Wrench, Search, Handshake, ShieldCheck, AlertCircle } from "lucide-react";
+import { CheckCircle2, MessageSquare, ClipboardCheck, FileText, Calendar, Wrench, Search, Handshake, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 const HomeRepairs = () => {
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast({
+      title: "Request Received",
+      description: "We'll get back to you within 24 hours.",
+    });
+    setIsContactOpen(false);
+  };
+
   const interiorServices = [{
     name: "Drywall Repair & Installation",
     desc: "Fixing holes, cracks, water damage, and texture matching"
@@ -727,30 +745,6 @@ const HomeRepairs = () => {
         </div>
       </section>
 
-      {/* Emergency Services Banner */}
-      <section className="py-10 bg-destructive/10 border-y border-destructive/20">
-        <div className="container-custom">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-center sm:text-left">
-            <AlertCircle className="h-8 w-8 text-destructive flex-shrink-0" />
-            <div className="flex-1 max-w-2xl">
-              <p className="text-lg font-semibold text-foreground">
-                Need Emergency Repairs? We're available 24/7 for urgent home repair issues.
-              </p>
-            </div>
-            <Button 
-              size="lg" 
-              variant="destructive"
-              className="font-bold"
-              asChild
-            >
-              <a href="tel:+14075550123" className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
-                Call Now: (407) 555-0123
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-primary-foreground">
@@ -759,32 +753,52 @@ const HomeRepairs = () => {
           <p className="text-lg mb-10 opacity-90 max-w-3xl mx-auto">
             Contact us today for a free estimate and let us restore your home to perfection.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button 
-              size="lg" 
-              variant="secondary"
-              className="text-base px-8"
-              asChild
-            >
-              <a href="tel:+1234567890" className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
-                Call Us Now
-              </a>
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="text-base px-8"
-              asChild
-            >
-              <a href="#contact" className="flex items-center gap-2">
-                <MessageSquare className="h-5 w-5" />
-                Free Estimate
-              </a>
-            </Button>
-          </div>
+          <Button 
+            size="lg" 
+            variant="secondary"
+            className="text-base px-8"
+            onClick={() => setIsContactOpen(true)}
+          >
+            <MessageSquare className="h-5 w-5 mr-2" />
+            REQUEST FREE ESTIMATE
+          </Button>
         </div>
       </section>
+
+      {/* Contact Form Dialog */}
+      <Dialog open={isContactOpen} onOpenChange={setIsContactOpen}>
+        <DialogContent className="sm:max-w-[500px]">
+          <DialogHeader>
+            <DialogTitle>Request Free Estimate</DialogTitle>
+            <DialogDescription>
+              Fill out the form below and we'll get back to you within 24 hours.
+            </DialogDescription>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Name</Label>
+              <Input id="name" required placeholder="Your name" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" required placeholder="your@email.com" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone</Label>
+              <Input id="phone" type="tel" placeholder="(555) 123-4567" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="service">Service Needed</Label>
+              <Input id="service" required placeholder="e.g., Drywall repair, Plumbing fix" />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="message">Additional Details</Label>
+              <Textarea id="message" placeholder="Describe the repair needed..." />
+            </div>
+            <Button type="submit" className="w-full">Submit Request</Button>
+          </form>
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>;
