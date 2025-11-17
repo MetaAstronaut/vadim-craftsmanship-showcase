@@ -73,26 +73,7 @@ const Hero = () => {
 
           {/* Right side - Stats card with premium design */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-premium-xl">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 border-r border-b border-white/10">
-                  <div className="text-4xl font-bold text-secondary-glow font-serif mb-2">15+</div>
-                  <div className="text-sm text-white/70 font-light uppercase tracking-wide">Years</div>
-                </div>
-                <div className="text-center p-4 border-b border-white/10">
-                  <div className="text-4xl font-bold text-secondary-glow font-serif mb-2">2K+</div>
-                  <div className="text-sm text-white/70 font-light uppercase tracking-wide">Projects</div>
-                </div>
-                <div className="text-center p-4 border-r border-white/10">
-                  <div className="text-4xl font-bold text-secondary-glow font-serif mb-2">100%</div>
-                  <div className="text-sm text-white/70 font-light uppercase tracking-wide">Satisfaction</div>
-                </div>
-                <div className="text-center p-4">
-                  <div className="text-4xl font-bold text-secondary-glow font-serif mb-2">24/7</div>
-                  <div className="text-sm text-white/70 font-light uppercase tracking-wide">Support</div>
-                </div>
-              </div>
-            </div>
+            
             
             {/* Trust indicators */}
             
