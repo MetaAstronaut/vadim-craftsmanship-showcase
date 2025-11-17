@@ -245,7 +245,7 @@ const HomeRepairs = () => {
 
               <AccordionItem value="electrical" className="border-2 border-card-border bg-card rounded-2xl p-8 transition-all duration-500 hover:shadow-premium-lg hover:border-secondary/40">
                 <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
-                  Electrical & HVAC
+                  Electrical
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid grid-cols-1 gap-6 pt-6">
