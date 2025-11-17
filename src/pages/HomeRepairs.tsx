@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import heroImage from "@/assets/home-repairs-hero.jpg";
-import { CheckCircle2, MessageSquare, ClipboardCheck, FileText, Calendar, Wrench, Search, Handshake, ShieldCheck } from "lucide-react";
+import { CheckCircle2, MessageSquare, ClipboardCheck, FileText, Calendar, Wrench, Search, Handshake, ShieldCheck, Home, Hammer, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 const HomeRepairs = () => {
@@ -164,10 +164,14 @@ const HomeRepairs = () => {
       </section>
 
       {/* Intro Section */}
-      <section className="section-padding bg-background">
+      <section className="py-[100px] bg-background">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-muted-foreground leading-relaxed">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <Info className="h-8 w-8 text-primary" />
+              <h2 className="text-3xl md:text-4xl font-semibold">Why Choose Us</h2>
+            </div>
+            <p className="text-xl text-foreground/90 leading-[1.7]">
               At The Vadim Group, we understand that your home is your sanctuary. Whether you need a quick fix or a complete renovation, our experienced team handles every project with the same level of care and professionalism.
             </p>
           </div>
@@ -175,74 +179,86 @@ const HomeRepairs = () => {
       </section>
 
       {/* Service Categories */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16">Common Home Repairs We Handle</h2>
+      <section className="py-[100px] bg-muted/30 relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <Hammer className="h-10 w-10 text-primary" />
+            <h2 className="text-4xl md:text-5xl font-bold text-center">Common Home Repairs We Handle</h2>
+          </div>
+          <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-[1.7]">
+            From minor fixes to major renovations, we provide comprehensive repair services for every part of your home.
+          </p>
           
           <div className="max-w-5xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="interior" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+            <Accordion type="single" collapsible className="space-y-6">
+              <AccordionItem value="interior" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   Interior Repairs
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {interiorServices.map((service, index) => <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-medium text-foreground">{service.name}</span>
-                          <span className="text-muted-foreground"> - {service.desc}</span>
+                  <ul className="grid grid-cols-1 gap-6 pt-6">
+                    {interiorServices.map((service, index) => <li key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                        <div className="space-y-1">
+                          <span className="font-semibold text-foreground text-[17px] block">{service.name}</span>
+                          <span className="text-muted-foreground leading-[1.7] block">{service.desc}</span>
                         </div>
                       </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="exterior" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="exterior" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   Exterior Repairs
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {exteriorServices.map((service, index) => <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-medium text-foreground">{service.name}</span>
-                          <span className="text-muted-foreground"> - {service.desc}</span>
+                  <ul className="grid grid-cols-1 gap-6 pt-6">
+                    {exteriorServices.map((service, index) => <li key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                        <div className="space-y-1">
+                          <span className="font-semibold text-foreground text-[17px] block">{service.name}</span>
+                          <span className="text-muted-foreground leading-[1.7] block">{service.desc}</span>
                         </div>
                       </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="kitchen" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="kitchen" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   Kitchen & Bathroom
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {kitchenBathroom.map((service, index) => <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-medium text-foreground">{service.name}</span>
-                          <span className="text-muted-foreground"> - {service.desc}</span>
+                  <ul className="grid grid-cols-1 gap-6 pt-6">
+                    {kitchenBathroom.map((service, index) => <li key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                        <div className="space-y-1">
+                          <span className="font-semibold text-foreground text-[17px] block">{service.name}</span>
+                          <span className="text-muted-foreground leading-[1.7] block">{service.desc}</span>
                         </div>
                       </li>)}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="electrical" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
-                  Electrical Repairs
+              <AccordionItem value="electrical" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
+                  Electrical & HVAC
                 </AccordionTrigger>
                 <AccordionContent>
-                  <ul className="grid grid-cols-1 gap-4 pt-4">
-                    {electricalRepairs.map((service, index) => <li key={index} className="flex items-start gap-3">
-                        <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <div>
-                          <span className="font-medium text-foreground">{service.name}</span>
-                          <span className="text-muted-foreground"> - {service.desc}</span>
+                  <ul className="grid grid-cols-1 gap-6 pt-6">
+                    {electricalRepairs.map((service, index) => <li key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted/50 transition-colors">
+                        <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                        <div className="space-y-1">
+                          <span className="font-semibold text-foreground text-[17px] block">{service.name}</span>
+                          <span className="text-muted-foreground leading-[1.7] block">{service.desc}</span>
                         </div>
                       </li>)}
                   </ul>
@@ -645,97 +661,100 @@ const HomeRepairs = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-background">
+      <section className="py-[100px] bg-background">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-semibold text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-8">
               Common Home Repair Questions Answered
             </h2>
+            <p className="text-lg text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-[1.7]">
+              Get answers to the most frequently asked questions about our home repair services.
+            </p>
             
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="cost" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+            <Accordion type="single" collapsible className="space-y-6">
+              <AccordionItem value="cost" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   How much does a typical home repair cost?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
                     Home repair costs vary based on the scope of work, materials needed, and labor time. Minor repairs like fixing a leaky faucet typically range from $150-$300, while larger projects like drywall repair can range from $300-$1,500. We provide transparent, detailed estimates before beginning any work so you know exactly what to expect.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="response" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="response" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   How quickly can you respond to repair requests?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
                     For standard repairs, we typically schedule within 2-5 business days. Emergency repairs receive same-day or next-day service depending on availability. We understand that some issues can't wait, and we prioritize urgent situations accordingly.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="licensed" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="warranty" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
+                  What kind of warranty do you offer?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
+                    All our work comes with a comprehensive warranty that covers both labor and materials. The specific warranty length varies by project type, but we stand behind everything we do. If something isn't right, we'll make it right—no questions asked.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="licensed" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   Are you licensed and insured?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
-                    Yes, The Vadim Group is fully licensed, bonded, and insured. We carry comprehensive general liability and workers' compensation insurance to protect both our clients and our team members. We're happy to provide proof of insurance upon request.
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
+                    Yes, The Vadim Group is fully licensed, bonded, and insured. This protects both you and our team throughout the project. We can provide proof of insurance upon request, and we ensure all work complies with local building codes.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="warranty" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
-                  Do you offer warranties on your work?
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
-                    Absolutely. We stand behind every repair with a comprehensive workmanship warranty. Specific warranty terms vary by project type, but we ensure that all repairs are completed to the highest standards and will last for years to come.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="size" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="size" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   Can you handle both small repairs and large renovations?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
                     Yes! No job is too small or too large for The Vadim Group. Whether you need a single outlet replaced or a complete home renovation, we approach every project with the same dedication to quality and customer satisfaction.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="presence" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="presence" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   Do I need to be home during the repair?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
                     It depends on the project. For some repairs, we can work independently after an initial consultation. For others, we may need access or input throughout the process. We'll discuss the specifics during scheduling and work around your availability.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="additional" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="additional" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   What if the problem is worse than initially thought?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
                     Transparency is one of our core values. If we discover additional issues during a repair, we'll stop work, document the problem, and provide you with options and pricing before proceeding. You'll never receive surprise charges.
                   </p>
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="prioritize" className="border bg-card p-6">
-                <AccordionTrigger className="text-xl font-semibold hover:no-underline">
+              <AccordionItem value="prioritize" className="border-2 border-border bg-card rounded-lg p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/30">
+                <AccordionTrigger className="text-[20px] font-bold hover:no-underline hover:text-primary transition-colors">
                   How do I know what repairs to prioritize?
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="text-muted-foreground pt-4 leading-relaxed">
+                  <p className="text-muted-foreground pt-6 leading-[1.7] text-[17px]">
                     During our initial assessment, we'll help you identify which repairs are urgent (safety or structural concerns), important (preventing further damage), and desirable (aesthetic improvements). We'll provide honest recommendations based on your budget and goals.
                   </p>
                 </AccordionContent>
@@ -747,21 +766,33 @@ const HomeRepairs = () => {
 
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6">Ready to Fix Your Home?</h2>
-          <p className="text-lg mb-10 opacity-90 max-w-3xl mx-auto">
-            Contact us today for a free estimate and let us restore your home to perfection.
-          </p>
-          <Button 
-            size="lg" 
-            variant="secondary"
-            className="text-base px-8"
-            onClick={() => setIsContactOpen(true)}
-          >
-            <MessageSquare className="h-5 w-5 mr-2" />
-            REQUEST FREE ESTIMATE
-          </Button>
+      <section className="py-[120px] relative overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-light">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary-light rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container-custom text-center relative z-10">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h2 className="text-5xl md:text-6xl font-bold text-primary-foreground leading-tight">
+              Ready to Fix Your Home?
+            </h2>
+            <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-[1.7]">
+              Contact us today for a free estimate and let us restore your home to perfection.
+            </p>
+            <div className="pt-4">
+              <Button 
+                size="lg" 
+                variant="secondary"
+                className="text-lg px-12 py-7 h-auto font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl"
+                onClick={() => setIsContactOpen(true)}
+              >
+                <MessageSquare className="h-6 w-6 mr-3" />
+                REQUEST FREE ESTIMATE
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
